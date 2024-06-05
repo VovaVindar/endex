@@ -62,7 +62,7 @@ export default function Navbar() {
             <Link href="https://app.endex.ai/">Sign In</Link>
             <Link href="/deployment">Custom Deployment</Link>
             <Button variant="primary">Join Waitlist</Button>
-            <Footer />
+            {/*<Footer />*/}
           </div>
         </div>
       </div>

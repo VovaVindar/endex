@@ -68,6 +68,9 @@
     min-width: 0;
     max-width: 100%;
   }
+  .hero-title {
+    margin-left: -1px;
+  }
 }
 @media all and (max-width: 520px) {
   .root-path-article {
