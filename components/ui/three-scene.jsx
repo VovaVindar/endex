@@ -478,6 +478,10 @@ function init() {
 
 // Start the script
 init();
+
+return () => {
+  mountRef.current.removeChild(renderer.domElement);
+}
   }, []);
 
   return <div ref={mountRef}></div>;
