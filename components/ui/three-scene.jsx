@@ -29,7 +29,7 @@ const ThreeScene = () => {
     const height = currentRef.offsetHeight;
 
     // Constants
-    const BROWSER_FACTOR = isSafariOrIOS() ? 1.6 : 2.6;
+    const BROWSER_FACTOR = isSafariOrIOS() ? 1.6 : 2.8;
     const CUBE_SIZE = 8;
     const VERTEX_SIZE = 0.4;
     const GRID_SIZE = 5;
