@@ -1,7 +1,8 @@
 import LatestArticle from "@/components/ui/navbar/latest-article";
 import styles from "./page.module.css";
 import { Button } from "@/components/ui/button";
-import ThreeScene from "@/components/ui/three-scene";
+//import ThreeScene from "@/components/ui/three-scene";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -39,7 +40,13 @@ export default function Home() {
             </p>
           </div>
           <div className={`${styles["hero-right"]}`}>
-            <ThreeScene />
+            <Image
+              src="/img/hero_img.png"
+              alt="Hero"
+              fill
+              quality={100}
+              style={{ objectFit: "contain" }}
+            />
           </div>
         </div>
       </main>
