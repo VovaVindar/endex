@@ -7,6 +7,18 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 
+function isSafariOrIOS() {
+  const navigator = window.navigator;
+  const ua = navigator.userAgent.toLowerCase();
+
+  const isSafariOrIOS =
+    (/safari/.test(ua) && !/chrome/.test(ua) && /version\//.test(ua)) ||
+    /iPad|iPhone|iPod/.test(navigator.platform) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // Added check for iOS devices
+
+  return isSafariOrIOS;
+}
+
 const ThreeScene = () => {
   const mountRef = useRef(null);
 
@@ -15,6 +27,7 @@ const ThreeScene = () => {
     const height = mountRef.current.offsetHeight;
 
     // Constants
+    const BROWSER_FACTOR = isSafariOrIOS() ? 1 : 4;
     const CUBE_SIZE = 8;
     const VERTEX_SIZE = 0.4;
     const GRID_SIZE = 5;
@@ -488,7 +501,7 @@ const ThreeScene = () => {
         g: transitionColor.g,
         b: transitionColor.b,
       };
-      let duration = FADE_IN_DURATION * 1000; // Particle color transition duration
+      let duration = FADE_IN_DURATION * 1000 * BROWSER_FACTOR; // Particle color transition duration
       let elapsed = 0;
       let easing = easeInOutQuad;
 

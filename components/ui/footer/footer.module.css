@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 clamp(1.625rem, 0.0017rem + 1.8739vw, 3rem);
-  margin-bottom: clamp(1.8125rem, -0.1059rem + 2.2147vw, 3.4375rem);
+  margin-bottom: clamp(1.8125rem, -0.1059rem + 1.98vw, 3.4375rem);
   position: relative;
 }
 .footer-links {
