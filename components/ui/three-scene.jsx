@@ -54,7 +54,8 @@ const ThreeScene = () => {
     ];
 
     let scene, camera, controls, composer, clock, renderer;
-    let group,
+    let mainGroup,
+      group,
       cubeLocations = [],
       activeLines = [],
       connectedVertices = new Map(),
@@ -66,9 +67,8 @@ const ThreeScene = () => {
       scene = new THREE.Scene();
       scene.background = new THREE.Color(0x000000);
 
-      camera = new THREE.PerspectiveCamera(50, width / height, 1, 1000);
-      camera.position.set(-60, -25, 25);
-      camera.lookAt(0, 0, 0);
+      camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
+      camera.position.set(70, 0, 0);
 
       renderer = new THREE.WebGLRenderer({
         powerPreference: "high-performance",
@@ -82,8 +82,8 @@ const ThreeScene = () => {
       controls.dampingFactor = 0.03;
       controls.enablePan = false;
       controls.enableZoom = false;
-      //controls.autoRotate = true;
-      //controls.autoRotateSpeed = 0.22;
+      controls.maxPolarAngle = Math.PI / 2;
+      controls.minPolarAngle = Math.PI / 2;
 
       let target = new THREE.WebGLRenderTarget(width, height, {
         samples: 10,
@@ -262,7 +262,7 @@ const ThreeScene = () => {
         );
       };
 
-      let pts = new Array(4000).fill().map((p) => {
+      let pts = new Array(4500).fill().map((p) => {
         sizes.push(Math.random() * 2 + 0.5);
         pushShift();
         return new THREE.Vector3(
@@ -272,7 +272,7 @@ const ThreeScene = () => {
         );
       });
 
-      for (let i = 0; i < 4000; i++) {
+      for (let i = 0; i < 4500; i++) {
         sizes.push(Math.random() * 1 + 1);
         pushShift();
       }
@@ -364,7 +364,8 @@ const ThreeScene = () => {
         }
       }
 
-      scene.add(group);
+      mainGroup.add(group);
+      scene.add(mainGroup);
     }
 
     // Create line between vertices
@@ -374,7 +375,7 @@ const ThreeScene = () => {
         toVertex,
       ]);
       const line = new THREE.Line(lineGeometry, lineMaterial.clone());
-      scene.add(line);
+      mainGroup.add(line);
 
       // Find the cube that contains the `toVertex`
       const containingCube = cubeLocations.find((location) => {
@@ -557,6 +558,7 @@ const ThreeScene = () => {
 
     // Initialize and start animation
     function init() {
+      mainGroup = new THREE.Group();
       initScene();
       createGrid();
       const startCube = cubeLocations[currentStartCubeIndex];
@@ -564,6 +566,10 @@ const ThreeScene = () => {
         .clone()
         .add(startCube.cube.position);
       initiateNewConnections(startVertex);
+
+      mainGroup.rotation.x = THREE.MathUtils.degToRad(-110);
+      mainGroup.rotation.y = THREE.MathUtils.degToRad(-31);
+      mainGroup.rotation.z = THREE.MathUtils.degToRad(-30);
     }
 
     // Start the script
