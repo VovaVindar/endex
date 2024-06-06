@@ -32,7 +32,7 @@ const ThreeScene = () => {
     const CUBE_SIZE = 8;
     const VERTEX_SIZE = 0.4;
     const GRID_SIZE = 5;
-    const SPACING = 8.0028;
+    const SPACING = 8.01;
 
     const VERTEX_OFFSETS = [
       { position: new THREE.Vector3(-4, -4, 4), label: "bottom front right" },
@@ -81,7 +81,7 @@ const ThreeScene = () => {
       const renderScene = new RenderPass(scene, camera);
       const bloomPass = new UnrealBloomPass(
         new THREE.Vector2(width, height),
-        0,
+        1.5,
         0.8,
         0.65
       );
@@ -110,9 +110,9 @@ const ThreeScene = () => {
         CUBE_SIZE,
         CUBE_SIZE
       );
-      const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
+      const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
       const edgeGeometry = new THREE.EdgesGeometry(cubeGeometry);
-      const edgeMaterial = new THREE.LineBasicMaterial({ color: 0x000000 });
+      const edgeMaterial = new THREE.LineBasicMaterial({ color: 0xffffff });
 
       const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
       const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
