@@ -13,7 +13,7 @@ export default function Home() {
             <h1
               className={`${styles["hero-title"]} text-heading-1 text-color-primary`}
             >
-              Generative AI for Financial Firms.
+              Generative AI for Financial Firms
             </h1>
             <p
               className={`${styles["hero-description"]} text-mono-1 text-color-primary`}
