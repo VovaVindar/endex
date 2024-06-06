@@ -5,9 +5,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 clamp(1.625rem, 0.0017rem + 1.8739vw, 3rem);
-  bottom: clamp(1.8125rem, -0.1059rem + 2.2147vw, 3.4375rem);
-  position: absolute;
-  left: 0;
+  margin-bottom: clamp(1.8125rem, -0.1059rem + 2.2147vw, 3.4375rem);
+  position: relative;
 }
 .footer-links {
   display: flex;
@@ -23,7 +22,6 @@
 @media screen and (max-width: 620px) {
   .footer {
     padding: 0 15px;
-    position: relative;
   }
 }
 @media screen and (max-width: 520px) {

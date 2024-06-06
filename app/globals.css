@@ -141,7 +141,8 @@ a {
 main {
   width: 100%;
   max-width: 2560px;
-  position: re;
+  position: relative;
+  min-height: 90vh;
 }
 @media all and (min-width: 2561px) {
   main {
