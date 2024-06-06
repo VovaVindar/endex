@@ -3,7 +3,8 @@
   font-size: 16px;
 }
 ::selection {
-  /* TO-DO */
+  color: var(--token-color-text-contrast);
+  background-color: var(--token-color-surface-contrast);
 }
 html {
   background-color: var(--token-color-surface-primary);

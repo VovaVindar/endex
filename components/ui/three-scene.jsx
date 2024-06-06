@@ -23,8 +23,10 @@ const ThreeScene = () => {
   const mountRef = useRef(null);
 
   useEffect(() => {
-    const width = mountRef.current.offsetWidth;
-    const height = mountRef.current.offsetHeight;
+    const currentRef = mountRef.current;
+
+    const width = currentRef.offsetWidth;
+    const height = currentRef.offsetHeight;
 
     // Constants
     const BROWSER_FACTOR = isSafariOrIOS() ? 1.6 : 2.6;
@@ -75,7 +77,7 @@ const ThreeScene = () => {
       });
       renderer.setPixelRatio(window.devicePixelRatio);
       renderer.setSize(width, height);
-      mountRef.current.appendChild(renderer.domElement);
+      currentRef.appendChild(renderer.domElement);
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
@@ -579,8 +581,8 @@ const ThreeScene = () => {
     window.addEventListener("resize", () => onWindowResize(renderer), false);
 
     function onWindowResize() {
-      const width = mountRef.current.offsetWidth;
-      const height = mountRef.current.offsetHeight;
+      const width = currentRef.offsetWidth;
+      const height = currentRef.offsetHeight;
 
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
@@ -596,7 +598,8 @@ const ThreeScene = () => {
         () => onWindowResize(renderer),
         false
       );
-      mountRef.current.removeChild(renderer.domElement);
+
+      currentRef.removeChild(renderer.domElement);
     };
   }, []);
 

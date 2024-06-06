@@ -24,6 +24,7 @@
   /* Color Tokens */
   --token-color-text-primary: var(--primitive-color-endex-600);
   --token-color-text-secondary: var(--primitive-color-endex-500);
+  --token-color-text-contrast: var(--primitive-color-endex-0);
 
   --token-color-surface-primary: var(--primitive-color-endex-0);
   --token-color-surface-secondary: var(--primitive-color-endex-100);
@@ -166,6 +167,9 @@ but replace 'vi' with 'vw'
 }
 .text-color-secondary {
   color: var(--token-color-text-secondary);
+}
+.text-color-contrast {
+  color: var(--token-color-text-contrast);
 }
 
 /* Surfaces */
