@@ -4,11 +4,11 @@ export default function PrivacyPolicy() {
   return (
     <main>
       <div
-        className={`${styles["legal-container"]} text-color-primary text-body-1`}
+        className={`${styles["legal-container"]} text-color-primary text-body-2`}
       >
-        <h2 className="text-heading-2">Terms of Use</h2>
+        <h2 className="text-heading-2">Privacy Policy</h2>
 
-        <h5 className="text-mono-1">Last Updated: March 14, 2024</h5>
+        <h6 className="text-mono-1">Last Updated: March 14, 2024</h6>
         <p>
           Welcome to Endex—an AI platform designed specifically for financial
           firms. This Privacy Notice explains how Edvise, Inc. (“Endex,” “we,”
@@ -50,9 +50,9 @@ export default function PrivacyPolicy() {
           directing any requests to the relevant customer.
         </p>
 
-        <h5 className="text-mono-1-bold">
+        <h6 className="text-mono-1-bold">
           Our Collection and Use of Personal Data
-        </h5>
+        </h6>
         <p>
           The categories of personal data we collect depend on how you interact
           with us and our services. For example, you may provide us your
@@ -67,9 +67,9 @@ export default function PrivacyPolicy() {
           other sources and third parties.
         </p>
 
-        <h5 className="text-mono-1-bold">
+        <h6 className="text-mono-1-bold">
           Personal Data Provided by Individuals
-        </h5>
+        </h6>
         <p>
           We collect the following categories of personal data individuals
           provide us:
