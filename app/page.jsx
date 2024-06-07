@@ -2,6 +2,7 @@ import LatestArticle from "@/components/ui/navbar/latest-article";
 import styles from "./page.module.css";
 import { Button } from "@/components/ui/button";
 import ThreeScene from "@/components/ui/three-scene";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -22,7 +23,11 @@ export default function Home() {
           </p>
           <div className={`${styles["hero-btn-container"]}`}>
             <Button variant="primary">Join Waitlist</Button>
-            <Button variant="secondary">Custom Deployment</Button>
+            <Link href="/custom-deployment">
+              <Button variant="secondary" tabIndex="-1">
+                Custom Deployment
+              </Button>
+            </Link>
           </div>
           <div className={`${styles["hero-divider"]} border-divider`}></div>
           <p className="text-mono-1 text-color-primary">

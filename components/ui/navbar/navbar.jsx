@@ -60,7 +60,7 @@ export default function Navbar() {
             <Link href="/blog">Blog</Link>
             <Link href="">Careers</Link>
             <Link href="https://app.endex.ai/">Sign In</Link>
-            <Link href="/deployment">Custom Deployment</Link>
+            <Link href="/custom-deployment">Custom Deployment</Link>
             <Button variant="primary">Join Waitlist</Button>
             <div className={`${styles["footer-container"]}`}>
               <Footer />

@@ -1,18 +1,18 @@
-import styles from "@/app/legal.module.css";
+import styles from "@/app/text.module.css";
 import Link from "next/link";
 
 export default function TermsOfUse() {
   return (
     <main>
-      <div className={`${styles["legal"]}`}>
-        <div
-          className={`${styles["legal-container"]} text-color-primary text-body-2`}
-        >
+      <div className={`${styles["text-container"]}`}>
+        <div className={`${styles["text"]} text-color-primary text-body-2`}>
           <h2 className="text-heading-2">Terms of Use</h2>
 
-          <h5 className="text-mono-1">Last Updated: March 6, 2024</h5>
+          <h6 className={`${styles["no-padding-top"]} text-mono-1`}>
+            Last Updated: March 6, 2024
+          </h6>
           <p>
-            Welcome to Endex.ai a website of Edvise Inc. (“Company,”, “Endex”,
+            Welcome to Endex.ai a website of Edvise Inc. (“Company”, “Endex”,
             “we,” or “us”). This page explains the terms by which you may use
             our website (the “Site”). By accessing or using the Site, you
             signify that you have read, understood, and agree to be bound by
@@ -32,7 +32,7 @@ export default function TermsOfUse() {
             disputes, rather than jury trials or class actions.
           </p>
 
-          <h5 className={`${styles["no-padding"]} text-mono-1-bold`}>
+          <h5 className={`${styles["no-padding-bottom"]} text-mono-1-bold`}>
             1. Use of Our Site
           </h5>
           <h6 className="text-mono-1">A.  Eligibility</h6>

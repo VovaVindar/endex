@@ -99,7 +99,7 @@ but replace 'vi' with 'vw'
   font-family: var(--aeonik);
   font-weight: 400;
   letter-spacing: var(--token-letter-spacing-1);
-  line-height: 100%;
+  line-height: 102%;
 }
 .text-heading-3 {
   font-size: var(--token-font-size-3);
