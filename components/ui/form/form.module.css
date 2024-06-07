@@ -17,15 +17,27 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+}
+.input-container label {
+  padding-bottom: 16px;
 }
 .input-container__input,
 .input-container__textarea {
-  border: none;
+  border: 1px solid transparent;
+  transition: border 0.25s ease;
   outline: none;
   padding: 14px 16px;
   width: 100%;
   height: 50px;
+  cursor: pointer;
+}
+input.input-container__input:hover,
+textarea.input-container__textarea:hover {
+  border: 1px solid var(--primitive-color-endex-300);
+}
+input.input-container__input:focus,
+textarea.input-container__textarea:focus {
+  border: 1px solid var(--primitive-color-endex-400);
 }
 .input-container__textarea {
   resize: none;
