@@ -588,8 +588,6 @@ const ThreeScene = () => {
       camera.updateProjectionMatrix();
       renderer.setSize(width, height);
       composer.setSize(width, height);
-
-      console.log(width, height);
     }
 
     return () => {

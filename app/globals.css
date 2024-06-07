@@ -158,3 +158,6 @@ main {
     align-items: center;
   }
 }
+html:has(.no-scroll) {
+  overflow: hidden;
+}

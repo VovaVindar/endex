@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <>
       <main>
+        <LatestArticle className={`${styles["root-path-article"]}`} />
         <div className={`${styles["hero-container"]}`}>
-          <LatestArticle className={`${styles["root-path-article"]}`} />
           <div className={`${styles["hero-left"]}`}>
             <h1
               className={`${styles["hero-title"]} text-heading-1 text-color-primary`}

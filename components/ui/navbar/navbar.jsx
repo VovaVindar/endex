@@ -38,7 +38,7 @@ export default function Navbar() {
         </div>
         <div
           className={`${styles["mobile"]} ${
-            isOpen ? styles["mobile-open"] : ""
+            isOpen ? `${styles["mobile-open"]} no-scroll` : ""
           }`}
         >
           <button
@@ -62,7 +62,9 @@ export default function Navbar() {
             <Link href="https://app.endex.ai/">Sign In</Link>
             <Link href="/deployment">Custom Deployment</Link>
             <Button variant="primary">Join Waitlist</Button>
-            {/*<Footer />*/}
+            <div className={`${styles["footer-container"]}`}>
+              <Footer />
+            </div>
           </div>
         </div>
       </div>
