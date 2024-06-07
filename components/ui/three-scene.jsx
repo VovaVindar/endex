@@ -26,7 +26,7 @@ const ThreeScene = () => {
     const currentRef = mountRef.current;
 
     const width = currentRef.offsetWidth;
-    const height = currentRef.offsetHeight;
+    const height = Math.min(width, currentRef.offsetHeight);
 
     // Constants
     const BROWSER_FACTOR = isSafariOrIOS() ? 1.6 : 3.5;
@@ -70,7 +70,7 @@ const ThreeScene = () => {
       scene.background = new THREE.Color(0x000000);
 
       camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-      camera.position.set(75, 0, 0);
+      camera.position.set(66, 0, 0);
 
       renderer = new THREE.WebGLRenderer({
         powerPreference: "high-performance",
@@ -582,7 +582,7 @@ const ThreeScene = () => {
 
     function onWindowResize() {
       const width = currentRef.offsetWidth;
-      const height = currentRef.offsetHeight;
+      const height = Math.min(width, currentRef.offsetHeight);
 
       camera.aspect = width / height;
       camera.updateProjectionMatrix();

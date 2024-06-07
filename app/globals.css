@@ -9,7 +9,6 @@
 html {
   background-color: var(--token-color-surface-primary);
   overflow-x: hidden;
-  height: 100%;
 }
 body {
   font-size: 16px; /* Accessibility concern */
@@ -17,7 +16,6 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: var(--background);
-  height: 100%;
 }
 
 /* CSS Reset by amazing Andy Bell
@@ -155,7 +153,6 @@ main {
 }
 @media all and (max-width: 1150px) {
   main {
-    display: flex;
     flex-direction: column;
     align-items: center;
   }
