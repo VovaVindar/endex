@@ -5,7 +5,8 @@
   justify-content: center;
 }
 .text {
-  width: clamp(30.9375rem, -0.0527rem + 35.7751vw, 57.1875rem);
+  /*width: clamp(30.9375rem, -0.0527rem + 35.7751vw, 57.1875rem);*/
+  width: clamp(32.1875rem, 0.0167rem + 37.138vi, 59.4375rem);
   text-wrap: pretty;
   margin-top: clamp(3.75rem, 0.0607rem + 4.2589vw, 6.875rem);
   margin-bottom: clamp(2.5625rem, 3.7891rem + -0.7666vw, 3.125rem);

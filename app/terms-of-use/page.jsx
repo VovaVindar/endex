@@ -1,4 +1,4 @@
-import styles from "@/app/text.module.css";
+import styles from "@/app/styles/text.module.css";
 import Link from "next/link";
 
 export default function TermsOfUse() {

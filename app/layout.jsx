@@ -1,5 +1,5 @@
-import "./design-system.css";
-import "./globals.css";
+import "./styles/design-system.css";
+import "./styles/globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/ui/navbar/navbar";
 import Footer from "@/components/ui/footer/footer";
