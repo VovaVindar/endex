@@ -153,6 +153,7 @@ main {
 }
 @media all and (max-width: 1150px) {
   main {
+    display: flex;
     flex-direction: column;
     align-items: center;
   }
