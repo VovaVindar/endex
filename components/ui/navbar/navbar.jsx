@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.css";
 import LatestArticle from "./latest-article";
@@ -57,10 +57,21 @@ export default function Navbar() {
                 <div key={index}></div>
               ))}
             </div>
-            <Link href="/blog">Blog</Link>
-            <Link href="">Careers</Link>
-            <Link href="https://app.endex.ai/">Sign In</Link>
-            <Link href="/custom-deployment">Custom Deployment</Link>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              Home
+            </Link>
+            <Link href="/blog" onClick={() => setIsOpen(false)}>
+              Blog
+            </Link>
+            <Link href="" onClick={() => setIsOpen(false)}>
+              Careers
+            </Link>
+            <Link href="https://app.endex.ai/" onClick={() => setIsOpen(false)}>
+              Sign In
+            </Link>
+            <Link href="/custom-deployment" onClick={() => setIsOpen(false)}>
+              Custom Deployment
+            </Link>
             <Button variant="primary">Join Waitlist</Button>
             <div className={`${styles["footer-container"]}`}>
               <Footer />
