@@ -1,0 +1,26 @@
+.legal-container {
+  margin-top: clamp(3.75rem, 0.0607rem + 4.2589vw, 6.875rem);
+  margin-bottom: clamp(2.5625rem, 3.7891rem + -0.7666vw, 3.125rem);
+  width: clamp(30.9375rem, -0.0527rem + 35.7751vw, 57.1875rem);
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-wrap: pretty;
+}
+.legal-container h2,
+.legal-container h5,
+.legal-container p,
+.legal-container ul,
+.legal-container li {
+  margin: 0;
+  padding-bottom: clamp(1.125rem, -0.0556rem + 1.3629vw, 2.125rem);
+}
+.legal-container h2 {
+  margin-left: -1px;
+}
+.legal-container h5 {
+  padding-top: clamp(1.25rem, -0.0044rem + 1.448vw, 2.3125rem);
+}
+.legal-container ul {
+  list-style: square;
+  padding-left: clamp(1.125rem, -0.0556rem + 1.3629vw, 2.125rem);
+}

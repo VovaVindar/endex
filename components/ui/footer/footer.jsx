@@ -9,8 +9,8 @@ export default function Footer() {
       <div
         className={`${styles["footer-links"]} text-mono-2 text-color-secondary`}
       >
-        <Link href="/privacy">Privacy Policy</Link>
-        <Link href="/terms">Terms of Use</Link>
+        <Link href="/privacy-policy">Privacy Policy</Link>
+        <Link href="/terms-of-use">Terms of Use</Link>
       </div>
     </footer>
   );
