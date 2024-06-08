@@ -19,6 +19,9 @@
   flex-direction: column;
   position: relative;
 }
+.input-container ::-webkit-scrollbar-track {
+  background: transparent;
+}
 .input-container label {
   cursor: pointer;
   padding-bottom: clamp(0.5rem, -0.0165rem + 0.5963vw, 0.9375rem);

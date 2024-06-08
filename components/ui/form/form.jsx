@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Input from "@/components/ui/form/input";
 import Textarea from "@/components/ui/form/textarea";
+import Checkbox from "@/components/ui/form/checkbox";
 import { Button } from "@/components/ui/button";
 import styles from "./form.module.css";
 
@@ -20,7 +21,9 @@ export default function Form({
     first_name: "",
     last_name: "",
     email: "",
-    use_case: "",
+    description: "",
+    firm_type: "",
+    acknowledge: false,
   };
 
   const [formData, setFormData] = useState(initialFormData);
@@ -56,7 +59,10 @@ export default function Form({
   };
 
   return (
-    <form className={`${styles["form-container"]} surface-color-secondary`}>
+    <form
+      onSubmit={handleSubmit}
+      className={`${styles["form-container"]} surface-color-secondary`}
+    >
       <div className={`${styles["row"]}`}>
         <Input
           label="First Name"
@@ -105,8 +111,18 @@ export default function Form({
             label="Description"
             placeholder="What do need custom deployment for..."
             name="description"
-            type="text"
             handleChange={handleChange}
+            required
+            ariaRequired={true}
+            disabled={isSubmitted || isLoading}
+          />
+        </div>
+      )}
+      {addChecbox && (
+        <div className={`${styles["row"]}`}>
+          <Checkbox
+            label="I acknowledge that it may take several months and iterative development process."
+            name="acknowledge"
             required
             ariaRequired={true}
             disabled={isSubmitted || isLoading}

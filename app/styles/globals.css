@@ -175,14 +175,14 @@ html:has(.no-scroll) {
 /* Scrollbar */
 ::-webkit-scrollbar {
   height: 1rem;
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar:horizontal {
-  height: 8px;
+  height: 9px;
   width: 1rem;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--primitive-color-endex-300-alpha-85);
+  background: var(--primitive-color-endex-300-alpha-80);
   border-color: transparent;
   border-radius: 0px;
 }
@@ -190,9 +190,9 @@ html:has(.no-scroll) {
   background-color: var(--primitive-color-endex-300);
 }
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: var(--token-color-surface-secondary);
   border: none;
-  border-radius: 9999px;
+  border-radius: 0px;
 }
 .scrollbar-hidden::-webkit-scrollbar-thumb {
   visibility: hidden;
