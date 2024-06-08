@@ -159,10 +159,58 @@ main {
     align-items: center;
   }
 }
+@media all and (max-width: 620px) {
+  main {
+    min-height: auto;
+  }
+}
 html:has(.no-scroll) {
   overflow: hidden;
 }
 :focus-visible {
   outline: 1px solid var(--primitive-color-endex-600);
   outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  height: 1rem;
+  width: 8px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 8px;
+  width: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primitive-color-endex-300-alpha-85);
+  border-color: transparent;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primitive-color-endex-300);
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  border: none;
+  border-radius: 9999px;
+}
+@media (min-width: 768px) {
+  .scrollbar-trigger::-webkit-scrollbar-thumb {
+    visibility: hidden;
+  }
+  .scrollbar-trigger:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+}
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+.scrollbar-hidden:hover::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+::-webkit-scrollbar-corner {
+  display: none;
+}
+::-webkit-resizer {
+  display: none;
 }

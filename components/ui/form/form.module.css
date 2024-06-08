@@ -17,6 +17,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .input-container label {
   cursor: pointer;
@@ -27,7 +28,7 @@
   border: 1px solid transparent;
   transition: border 0.25s ease;
   outline: none;
-  padding: clamp(0.625rem, -0.0243rem + 0.7496vi, 1.175rem)
+  padding: clamp(0.625rem, -0.0243rem + 0.7496vw, 1.175rem)
     clamp(0.75rem, 0.1007rem + 0.7496vw, 1.3rem);
   width: 100%;
 }
@@ -42,14 +43,37 @@ textarea.input-container__textarea:focus {
   border: 1px solid var(--primitive-color-endex-400);
 }
 .input-container__textarea {
-  resize: none;
   overflow: hidden;
   overflow-y: visible;
-
-  padding-top: 17px;
-  min-height: 49px;
-  height: 49px;
-  max-height: 146px;
+  resize: vertical;
+  min-height: clamp(2.5125rem, 0.0783rem + 2.8101vw, 4.5744rem);
+  max-height: clamp(14rem, 2.2rem + 12vw, 24rem);
+}
+.input-container__textarea-resizer {
+  pointer-events: none;
+  position: absolute;
+  right: clamp(0.1875rem, 0.0252rem + 0.1874vw, 0.325rem);
+  bottom: clamp(0.1875rem, 0.0252rem + 0.1874vw, 0.325rem);
+  width: clamp(0.9025rem, 0.0001rem + 1.0417vw, 1.6669rem);
+  height: clamp(0.9025rem, 0.0001rem + 1.0417vw, 1.6669rem);
+  z-index: 1;
+}
+.input-container__textarea-resizer-bg {
+  pointer-events: none;
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  width: clamp(1.0625rem, -0.2657rem + 1.5332vw, 2.1875rem);
+  height: clamp(1.0625rem, -0.2657rem + 1.5332vw, 2.1875rem);
+  z-index: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0) 0%,
+    var(--token-color-surface-tertiary) 65%
+  );
+}
+.input-container__textarea-resizer img {
+  filter: invert(68%) sepia(6%) saturate(169%) hue-rotate(169deg)
+    brightness(91%) contrast(91%);
 }
 .input-container__input::placeholder,
 .input-container__textarea::placeholder {
@@ -62,12 +86,19 @@ textarea.input-container__textarea:focus {
     padding: 40px 15px 50px 15px;
     gap: 24px;
   }
-  .input-container__input,
-  .input-container__textarea {
-    padding: 0 16px;
-    height: 50px;
-  }
   .input-container label {
     padding-bottom: 12px;
+  }
+  .input-container__input,
+  .input-container__textarea {
+    padding: 14px 16px;
+    height: 50px;
+    min-height: 50px;
+  }
+  .input-container__textarea-resizer {
+    display: none;
+  }
+  .input-container__textarea-resizer-bg {
+    display: none;
   }
 }
