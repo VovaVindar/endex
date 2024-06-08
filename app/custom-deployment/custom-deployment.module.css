@@ -1,3 +1,6 @@
+.deployment-headline {
+  width: 104%;
+}
 .form-translate {
   transform: translateX(clamp(-2.9169rem, 1.477rem + -2.7462vw, -0.9019rem));
 }
@@ -6,6 +9,9 @@
   margin-bottom: clamp(6.75rem, 12vh, 12.5rem);
 }
 @media all and (max-width: 620px) {
+  .deployment-headline {
+    width: 100%;
+  }
   .form-translate {
     transform: translateX(0);
   }

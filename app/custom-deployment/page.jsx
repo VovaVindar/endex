@@ -7,7 +7,7 @@ export default function CustomDeployment() {
     <main>
       <div className={`${textStyles["text-container"]}`}>
         <div className={`${textStyles["text"]} text-color-primary text-body-2`}>
-          <h2 className="text-heading-2" style={{ width: "104%" }}>
+          <h2 className={`${textStyles["deployment-headline"]} text-heading-2`}>
             Custom Deployment
           </h2>
           <p>

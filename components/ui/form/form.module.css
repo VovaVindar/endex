@@ -97,12 +97,16 @@ textarea.input-container__textarea:focus {
   .input-container label {
     padding-bottom: 12px;
   }
+  .input-container__input {
+    height: 50px;
+  }
   .input-container__input,
   .input-container__textarea {
     padding: 14px 16px;
-    height: 50px;
     min-height: 50px;
   }
+}
+@media (hover: none) {
   .input-container__textarea-resizer {
     display: none;
   }
