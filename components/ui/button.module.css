@@ -48,11 +48,11 @@
 .button-secondary::before {
   content: "";
   position: absolute;
-  width: calc(100% - 2px);
+  width: calc(100% - 1px);
   height: clamp(0.0406rem, 0rem + 0.0468vw, 0.075rem);
   background-color: var(--token-color-text-primary);
   bottom: 2px;
-  left: 1px;
+  left: 0px;
   transform-origin: 0% 50%;
 }
 .button-secondary::before {
