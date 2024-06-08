@@ -7,7 +7,7 @@ export default function FeaturedArticle() {
   return (
     <div className={`${styles["featured-article"]}`}>
       <div className={`${styles["featured-article__text"]}`}>
-        <h5 className="text-mono-1 text-color-secondary">MAY 31, 2024</h5>
+        <h5 className="text-mono-1 text-color-secondary">May 31, 2024</h5>
         <div>
           <h3 className="text-heading-3">Endex AI Breakthrough</h3>
           <p className="text-body-1">
@@ -24,7 +24,7 @@ export default function FeaturedArticle() {
         </Link>
       </div>
       <div className={`${styles["featured-article__img"]}`}>
-        <Image src="/img/blog/1.png" fill />
+        <Image src="/img/blog/1.png" alt="Alt text" priority fill />
       </div>
     </div>
   );

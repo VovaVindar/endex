@@ -29,6 +29,9 @@
 .latest-container {
   margin-top: clamp(2.125rem, -0.1624rem + 2.6405vw, 4.0625rem);
   margin-bottom: clamp(15.75rem, -0.0402rem + 18.2283vw, 29.125rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5625rem, -0.1268rem + 4.2589vw, 6.6875rem);
 }
 @media all and (max-width: 620px) {
   .hero-title {

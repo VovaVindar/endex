@@ -8,8 +8,9 @@
   border: 1px solid var(--primitive-color-endex-100);
   transition: border 0.25s ease;
   outline: none;
-  padding: clamp(0.625rem, -0.0243rem + 0.7496vw, 1.175rem)
-    clamp(0.75rem, 0.1007rem + 0.7496vw, 1.3rem);
+  padding: 0 clamp(0.75rem, 0.1007rem + 0.7496vw, 1.3rem);
+  height: clamp(2.8125rem, 0.0086rem + 3.2368vw, 5.1875rem);
+  padding-top: clamp(0.0625rem, -0.0113rem + 0.0852vw, 0.125rem);
   width: 100%;
 }
 input.newsletter-input:focus-visible {
@@ -25,7 +26,13 @@ input.newsletter-input:focus {
 }
 @media all and (max-width: 620px) {
   .newsletter-input {
-    height: var(--input-height);
     padding: 14px 16px;
+    padding-top: 17px;
+    height: 54px;
+  }
+}
+@media all and (max-width: 355px) {
+  .newsletter-input {
+    height: 50px;
   }
 }
