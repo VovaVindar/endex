@@ -2,16 +2,18 @@
   width: 100%;
   padding: 0 15px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: clamp(2.5625rem, 3.7891rem + -0.7666vw, 3.125rem);
 }
 .text {
   /*width: clamp(30.9375rem, -0.0527rem + 35.7751vw, 57.1875rem);*/
   width: clamp(32.1875rem, 0.0167rem + 37.138vw, 59.4375rem);
   text-wrap: pretty;
   margin-top: clamp(3.75rem, 0.0607rem + 4.2589vw, 6.875rem);
-  margin-bottom: clamp(2.5625rem, 3.7891rem + -0.7666vw, 3.125rem);
 }
 .text h2,
+.text h4,
 .text h5,
 .text h6,
 .text p,
@@ -24,6 +26,7 @@
   margin-left: -1px;
   padding-bottom: clamp(1.8125rem, 0.0416rem + 2.0443vw, 3.3125rem);
 }
+.text h4,
 .text h5,
 .text h6 {
   padding-top: clamp(1.25rem, -0.0044rem + 1.448vw, 2.3125rem);
@@ -70,9 +73,11 @@
 }
 
 @media all and (max-width: 620px) {
+  .text-container {
+    margin-bottom: 90px;
+  }
   .text {
     margin-top: 105px;
-    margin-bottom: 90px;
     width: 100%;
   }
   .text h2 {

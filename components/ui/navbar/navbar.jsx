@@ -22,7 +22,7 @@ export default function Navbar() {
             ))}
           </div>
         </Link>
-        {pathname !== "/blog" && (
+        {!pathname.includes("/blog") && (
           <div>
             <LatestArticle />
           </div>
