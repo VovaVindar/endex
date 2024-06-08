@@ -4,8 +4,11 @@
   column-gap: auto;
   row-gap: clamp(6.6875rem, 0.0467rem + 7.666vw, 12.3125rem);
 }
-.article__img {
+.article {
   width: clamp(24rem, 0.0195rem + 27.6831vw, 44.3125rem);
+}
+.article__img {
+  width: 100%;
   height: clamp(15.75rem, -0.0402rem + 18.2283vw, 29.125rem);
   position: relative;
   border: 1px solid var(--primitive-color-endex-200);
@@ -15,4 +18,9 @@
   display: flex;
   flex-direction: column;
   gap: clamp(0.5rem, -0.0903rem + 0.6814vw, 1rem);
+}
+@media screen and (max-width: 1300px) {
+  .latest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

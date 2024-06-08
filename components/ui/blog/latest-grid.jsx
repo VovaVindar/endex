@@ -8,6 +8,7 @@ export default function LatestGrid() {
       <Article
         date="Apr 8, 2024"
         title="Navigating Ethics and Privacy in the Digital Age"
+        img_id={3}
       />
       <Article
         date="Mar 15, 2024"
@@ -17,14 +18,17 @@ export default function LatestGrid() {
       <Article
         date="Feb 28, 2024"
         title="Unlocking Opportunities: How Financial AI Empowers Investors"
+        img_id={4}
       />
       <Article
         date="Feb 6, 2024"
         title="Democratizing Wealth Management: The Role of AI in Personal Finance"
+        img_id={5}
       />
       <Article
         date="Jan 12, 2024"
         title="Navigating Volatility: How AI Keeps Markets on Course"
+        img_id={6}
       />
     </div>
   );
@@ -38,8 +42,8 @@ const Article = ({
   title = "Endex AI Breakthrough",
 }) => {
   return (
-    <Link href={link}>
-      <div>
+    <div className={`${styles["article"]}`}>
+      <Link href={link}>
         <div className={`${styles["article__img"]}`}>
           <Image src={`/img/blog/${img_id}.png`} alt={alt} fill />
         </div>
@@ -47,7 +51,7 @@ const Article = ({
           <h5 className="text-mono-1 text-color-secondary">{date}</h5>
           <h4 className="text-heading-4">{title}</h4>
         </div>
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 };
