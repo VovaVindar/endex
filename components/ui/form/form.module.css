@@ -1,17 +1,17 @@
 .form-container {
-  width: 750px;
-  padding: 60px 60px 70px 60px;
+  width: clamp(33.8381rem, 0.0005rem + 39.0622vw, 62.5rem);
+  padding: clamp(2.0625rem, -1.4055rem + 4.0034vw, 5rem)
+    clamp(2.0625rem, -1.4055rem + 4.0034vw, 5rem)
+    clamp(3.25rem, 0.0772rem + 3.6627vw, 5.9375rem)
+    clamp(2.0625rem, -1.4055rem + 4.0034vw, 5rem);
   display: flex;
   flex-direction: column;
-  gap: 35px;
-}
-.form-container.translate {
-  transform: translateX(clamp(-2.9169rem, 1.477rem + -2.7462vi, -0.9019rem));
+  gap: clamp(1.5625rem, -0.0608rem + 1.8739vw, 2.9375rem);
 }
 .form-container .row {
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  gap: clamp(1.0813rem, -0.0034rem + 1.2521vw, 2rem);
 }
 .input-container {
   width: 100%;
@@ -19,20 +19,22 @@
   flex-direction: column;
 }
 .input-container label {
-  padding-bottom: 16px;
+  cursor: pointer;
+  padding-bottom: clamp(0.5rem, -0.0165rem + 0.5963vw, 0.9375rem);
 }
 .input-container__input,
 .input-container__textarea {
   border: 1px solid transparent;
   transition: border 0.25s ease;
   outline: none;
-  padding: 14px 16px;
+  padding: clamp(0.625rem, -0.0243rem + 0.7496vi, 1.175rem)
+    clamp(0.75rem, 0.1007rem + 0.7496vw, 1.3rem);
   width: 100%;
-  height: 50px;
-  cursor: pointer;
 }
 input.input-container__input:hover,
-textarea.input-container__textarea:hover {
+input.input-container__input:focus-visible,
+textarea.input-container__textarea:hover,
+textarea.input-container__textarea:focus-visible {
   border: 1px solid var(--primitive-color-endex-300);
 }
 input.input-container__input:focus,
@@ -52,4 +54,20 @@ textarea.input-container__textarea:focus {
 .input-container__input::placeholder,
 .input-container__textarea::placeholder {
   color: var(--primitive-color-endex-500);
+}
+
+@media all and (max-width: 620px) {
+  .form-container {
+    width: 100%;
+    padding: 40px 15px 50px 15px;
+    gap: 24px;
+  }
+  .input-container__input,
+  .input-container__textarea {
+    padding: 0 16px;
+    height: 50px;
+  }
+  .input-container label {
+    padding-bottom: 12px;
+  }
 }

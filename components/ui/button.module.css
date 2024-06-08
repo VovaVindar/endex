@@ -1,7 +1,21 @@
 .button-primary,
-.buttom-form {
+.button-form {
   padding: 0 clamp(1.75rem, 0.1267rem + 1.8739vw, 3.125rem);
   height: clamp(2.8125rem, 0.0086rem + 3.2368vw, 5.1875rem);
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+.button-primary::after,
+.button-form::after {
+  transition: opacity 0.2s ease;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: var(--token-color-surface-contrast);
+  opacity: 0;
 }
 .button-primary,
 .button-secondary,
@@ -11,11 +25,14 @@
 }
 .button-primary {
   background-color: var(--token-color-surface-tertiary);
-  transition: background-color 0.2s ease;
   width: fit-content;
 }
-.button-primary:hover {
+.button-primary:hover,
+.button-primary:focus-visible {
   background-color: var(--token-color-surface-highlight);
+}
+.button-primary:active::after {
+  opacity: 0.2;
 }
 .button-secondary {
   background: none;
@@ -49,7 +66,15 @@
   transition: transform 0.3s ease;
 }
 .button-form {
+  margin-top: clamp(0.9375rem, -0.0217rem + 1.1073vw, 1.75rem);
   background-color: var(--token-color-surface-highlight);
+}
+.button-form:hover::after,
+.button-form:focus-visible::after {
+  opacity: 0.1;
+}
+.button-form:active::after {
+  opacity: 0.2;
 }
 @media screen and (max-width: 620px) {
   .button-primary,

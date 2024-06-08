@@ -1,26 +1,12 @@
-"use client";
-
-import pageStyles from "@/app/styles/text.module.css";
-import formStyles from "@/components/ui/form/form.module.css";
-import { useState } from "react";
-import Input from "@/components/ui/form/input";
+import textStyles from "@/app/styles/text.module.css";
+import deploymentStyles from "./custom-deployment.module.css";
+import Form from "@/components/ui/form/form";
 
 export default function CustomDeployment() {
-  const initialFormData = {
-    first_name: "",
-    last_name: "",
-    email: "",
-    use_case: "",
-  };
-
-  const [formData, setFormData] = useState(initialFormData);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
   return (
     <main>
-      <div className={`${pageStyles["text-container"]}`}>
-        <div className={`${pageStyles["text"]} text-color-primary text-body-2`}>
+      <div className={`${textStyles["text-container"]}`}>
+        <div className={`${textStyles["text"]} text-color-primary text-body-2`}>
           <h2 className="text-heading-2" style={{ width: "104%" }}>
             Custom Deployment
           </h2>
@@ -33,28 +19,15 @@ export default function CustomDeployment() {
             remaining essentially unchanged.
           </p>
           <div
-            className={`${formStyles["form-container"]} ${formStyles["translate"]} surface-color-secondary`}
+            className={`${deploymentStyles["form-translate"]} ${deploymentStyles["form-vertical-margin"]}`}
           >
-            <div className={`${formStyles["row"]}`}>
-              <Input
-                label="First Name"
-                name="first_name"
-                type="text"
-                //handleChange={handleChange}
-                required
-                ariaRequired={true}
-                disabled={isSubmitted || isLoading}
-              />
-              <Input
-                label="Last Name"
-                name="last_name"
-                type="text"
-                //handleChange={handleChange}
-                required
-                ariaRequired={true}
-                disabled={isSubmitted || isLoading}
-              />
-            </div>
+            <Form
+              addHeadline={false}
+              addClose={false}
+              cta="Submit"
+              addDescription={true}
+              addChecbox={true}
+            />
           </div>
         </div>
       </div>

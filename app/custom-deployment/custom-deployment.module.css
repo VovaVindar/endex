@@ -1,1 +1,16 @@
-
+.form-translate {
+  transform: translateX(clamp(-2.9169rem, 1.477rem + -2.7462vw, -0.9019rem));
+}
+.form-vertical-margin {
+  margin-top: clamp(1.8125rem, 0.3368rem + 1.7036vw, 3.0625rem);
+  margin-bottom: clamp(6.75rem, 12vh, 12.5rem);
+}
+@media all and (max-width: 620px) {
+  .form-translate {
+    transform: translateX(0);
+  }
+  .form-vertical-margin {
+    margin-top: 20px;
+    margin-bottom: 70px;
+  }
+}
