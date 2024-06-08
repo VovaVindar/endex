@@ -106,6 +106,12 @@ textarea.input-container__textarea:focus {
     min-height: 50px;
   }
 }
+@media all and (max-width: 520px) {
+  .form-container .row {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
 @media (hover: none) {
   .input-container__textarea-resizer {
     display: none;
