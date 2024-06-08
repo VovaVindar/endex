@@ -23,6 +23,10 @@
   cursor: pointer;
   padding-bottom: clamp(0.5rem, -0.0165rem + 0.5963vw, 0.9375rem);
 }
+.input-container input,
+.input-container textarea {
+  border-radius: 0px;
+}
 .input-container__input,
 .input-container__textarea {
   border: 1px solid transparent;
@@ -32,11 +36,15 @@
     clamp(0.75rem, 0.1007rem + 0.7496vw, 1.3rem);
   width: 100%;
 }
-input.input-container__input:hover,
 input.input-container__input:focus-visible,
-textarea.input-container__textarea:hover,
 textarea.input-container__textarea:focus-visible {
   border: 1px solid var(--primitive-color-endex-300);
+}
+@media (hover: hover) {
+  input.input-container__input:hover,
+  textarea.input-container__textarea:hover {
+    border: 1px solid var(--primitive-color-endex-300);
+  }
 }
 input.input-container__input:focus,
 textarea.input-container__textarea:focus {

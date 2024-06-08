@@ -27,9 +27,13 @@
   background-color: var(--token-color-surface-tertiary);
   width: fit-content;
 }
-.button-primary:hover,
 .button-primary:focus-visible {
   background-color: var(--token-color-surface-highlight);
+}
+@media (hover: hover) {
+  .button-primary:hover {
+    background-color: var(--token-color-surface-highlight);
+  }
 }
 .button-primary:active::after {
   opacity: 0.2;
@@ -54,29 +58,32 @@
 .button-secondary::before {
   transform: scaleX(0);
 }
-.button-secondary:hover::before {
-  transform: scaleX(1);
-  transform-origin: 0% 50%;
-  transition: transform 0.36s ease;
-  transition-delay: 0.17s;
-}
-.button-secondary:hover::after {
-  transform: scaleX(0);
-  transform-origin: 100% 50%;
-  transition: transform 0.3s ease;
+@media (hover: hover) {
+  .button-secondary:hover::before {
+    transform: scaleX(1);
+    transform-origin: 0% 50%;
+    transition: transform 0.36s ease;
+    transition-delay: 0.17s;
+  }
+  .button-secondary:hover::after {
+    transform: scaleX(0);
+    transform-origin: 100% 50%;
+    transition: transform 0.3s ease;
+  }
 }
 .button-form {
   margin-top: clamp(0.9375rem, -0.0217rem + 1.1073vw, 1.75rem);
   background-color: var(--token-color-surface-highlight);
 }
-.button-form:hover::after,
 .button-form:focus-visible::after {
   opacity: 0.1;
 }
-.button-form:active::after {
-  opacity: 0.2;
+@media (hover: hover) {
+  .button-form:hover::after {
+    opacity: 0.1;
+  }
 }
-@media screen and (max-width: 620px) {
+@media all and (max-width: 620px) {
   .button-primary,
   .buttom-form {
     padding: 0 34px;
@@ -87,7 +94,7 @@
     padding-top: 1px;
   }
 }
-@media screen and (max-width: 355px) {
+@media all and (max-width: 355px) {
   .button-primary,
   .buttom-form {
     padding: 0 24px;

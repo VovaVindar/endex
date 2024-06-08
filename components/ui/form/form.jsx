@@ -103,7 +103,7 @@ export default function Form({
         <div className={`${styles["row"]}`}>
           <Textarea
             label="Description"
-            placeholder="What do you want a custom deployment to do..."
+            placeholder="What do you need custom deployment for..."
             name="description"
             type="text"
             handleChange={handleChange}

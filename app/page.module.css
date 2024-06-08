@@ -115,13 +115,13 @@
     margin-top: 0px;
   }
 }
-@media screen and (max-width: 455px) {
+@media all and (max-width: 455px) {
   .hero-description {
     text-wrap: unset;
     max-width: 354px;
   }
 }
-@media screen and (max-width: 355px) {
+@media all and (max-width: 355px) {
   .hero-btn-container {
     gap: 18px;
   }

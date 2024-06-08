@@ -19,12 +19,12 @@
     left: auto;
   }
 }
-@media screen and (max-width: 620px) {
+@media all and (max-width: 620px) {
   .footer {
     padding: 0 15px;
   }
 }
-@media screen and (max-width: 520px) {
+@media all and (max-width: 520px) {
   .footer {
     margin-bottom: 14px;
     align-items: flex-end;

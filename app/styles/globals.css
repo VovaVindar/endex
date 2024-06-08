@@ -194,19 +194,19 @@ html:has(.no-scroll) {
   border: none;
   border-radius: 9999px;
 }
-@media (min-width: 768px) {
+.scrollbar-hidden::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+.scrollbar-hidden:hover::-webkit-scrollbar-thumb {
+  visibility: hidden;
+}
+@media (hover: hover) {
   .scrollbar-trigger::-webkit-scrollbar-thumb {
     visibility: hidden;
   }
   .scrollbar-trigger:hover::-webkit-scrollbar-thumb {
     visibility: visible;
   }
-}
-.scrollbar-hidden::-webkit-scrollbar-thumb {
-  visibility: hidden;
-}
-.scrollbar-hidden:hover::-webkit-scrollbar-thumb {
-  visibility: hidden;
 }
 ::-webkit-scrollbar-corner {
   display: none;

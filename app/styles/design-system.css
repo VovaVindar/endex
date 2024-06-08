@@ -220,7 +220,7 @@ but replace 'vi' with 'vw'
   background-size: 6px 1px, 1px 6px;
 }
 
-@media screen and (max-width: 620px) {
+@media all and (max-width: 620px) {
   :root {
     /* Font Size */
     --token-font-size-6: 14px;
@@ -228,7 +228,7 @@ but replace 'vi' with 'vw'
     --token-font-size-5: 18px;
   }
 }
-@media screen and (max-width: 520px) {
+@media all and (max-width: 520px) {
   :root {
     /* Letter Spacing */
     --token-letter-spacing-5: 0.002em;
@@ -241,7 +241,7 @@ but replace 'vi' with 'vw'
     line-height: 100%;
   }
 }
-@media screen and (max-width: 335px) {
+@media all and (max-width: 335px) {
   :root {
     /* Font Size */
     --token-font-size-6: 13px;
