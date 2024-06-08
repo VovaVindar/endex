@@ -10,9 +10,11 @@ const Select = ({
 }) => {
   return (
     <div className={`${styles["select-container"]} text-color-primary`}>
-      <label htmlFor={name} className={`text-mono-1`}>
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={name} className={`text-mono-1`}>
+          {label}
+        </label>
+      )}
       <select
         id={name}
         onChange={handleChange}

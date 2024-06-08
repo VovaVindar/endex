@@ -26,7 +26,7 @@
   display: inline-block;
   vertical-align: text-top;
   background: var(--token-color-surface-tertiary);
-  border: 1px solid transparent;
+  border: 1px solid var(--primitive-color-endex-100);
   transition: all 0.25s ease;
 }
 .checkbox:focus-visible + label:before {

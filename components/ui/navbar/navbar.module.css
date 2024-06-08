@@ -1,7 +1,7 @@
 .navbar {
   width: 100%;
   max-width: 2560px;
-  padding: clamp(1.625rem, 0.0017rem + 1.8739vw, 3rem);
+  padding: var(--page-padding);
   padding-bottom: 0;
   display: flex;
   flex-direction: row;
@@ -88,7 +88,6 @@
 }
 @media all and (max-width: 620px) {
   .navbar {
-    padding: 15px;
     padding-bottom: 20px;
     background-color: var(--token-color-surface-primary);
     position: fixed;

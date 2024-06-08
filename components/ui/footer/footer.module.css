@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 clamp(1.625rem, 0.0017rem + 1.8739vw, 3rem);
+  padding: 0 var(--page-padding);
   margin-bottom: clamp(1.8125rem, -0.1059rem + 1.98vw, 3.4375rem);
   position: relative;
 }
@@ -17,11 +17,6 @@
 @media all and (min-width: 2561px) {
   .footer {
     left: auto;
-  }
-}
-@media all and (max-width: 620px) {
-  .footer {
-    padding: 0 15px;
   }
 }
 @media all and (max-width: 520px) {

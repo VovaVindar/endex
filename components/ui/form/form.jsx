@@ -12,7 +12,7 @@ import axios from "axios";
 
 export default function Form({
   addHeadline = false,
-  headline,
+  headline = "Contact Sales",
   addClose = false,
   cta = "Submit",
   addDescription = false,
@@ -40,7 +40,7 @@ export default function Form({
 
     setIsLoading(true);
     try {
-      const response = await axios.post("/api/submit", formData);
+      await axios.post("/api/submit", formData);
       // TODO: the API request should be replaced with the actual API endpoint
       setIsSubmitted(true);
       setTimeout(() => {
@@ -56,6 +56,10 @@ export default function Form({
         "There was an error when submitting the form. Please try again or reach out directly to team@endex.ai.",
         error
       );
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setIsLoading(false);
+      }, 500);
     }
   };
 
@@ -148,7 +152,7 @@ export default function Form({
         </div>
       )}
       <Button variant="form" disabled={isSubmitted || isLoading} type="submit">
-        {isLoading ? "Submitting..." : isSubmitted ? "Submitted" : cta}
+        {isLoading ? "Submitting..." : isSubmitted ? "Submitted!" : cta}
       </Button>
       <div aria-live="polite" className="visually-hidden">
         {/* This is for screen readers */}

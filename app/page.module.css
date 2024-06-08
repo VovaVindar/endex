@@ -57,7 +57,7 @@
   .hero-container {
     display: flex;
     flex-direction: column-reverse;
-    padding: 0 clamp(1.625rem, 0.0017rem + 1.8739vw, 3rem);
+    padding: 0 var(--page-padding);
     align-items: center;
     max-width: fit-content;
     width: 100%;
@@ -80,9 +80,6 @@
   }
 }
 @media all and (max-width: 620px) {
-  .hero-container {
-    padding: 0 15px;
-  }
   .hero-description {
     min-width: 0;
     max-width: 100%;

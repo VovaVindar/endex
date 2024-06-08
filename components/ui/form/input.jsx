@@ -11,9 +11,11 @@ const Input = ({
 }) => {
   return (
     <div className={`${styles["input-container"]} text-color-primary`}>
-      <label htmlFor={name} className={`text-mono-1`}>
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={name} className={`text-mono-1`}>
+          {label}
+        </label>
+      )}
       <input
         id={name}
         className={`${styles["input-container__input"]} text-body-2 surface-color-tertiary`}

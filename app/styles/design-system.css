@@ -1,6 +1,7 @@
 :root {
   /* Color Primitives */
   --primitive-color-endex-0: hsla(0, 0%, 0%, 1);
+  --primitive-color-endex-100-alpha-40: hsla(210, 3%, 10%, 0.4)
   --primitive-color-endex-100: hsla(210, 3%, 10%, 1);
   --primitive-color-endex-200: hsla(210, 3%, 13%, 1);
   --primitive-color-endex-300: hsla(210, 3%, 22%, 1);
@@ -12,6 +13,7 @@
   /* Sizes */
   --icon-size: clamp(0.9025rem, 0.0001rem + 1.0417vw, 1.6669rem);
   --input-height: clamp(2.5125rem, 0.0783rem + 2.8101vw, 4.5744rem);
+  --page-padding: clamp(1.625rem, 0.0017rem + 1.8739vw, 3rem);
 }
 /* Display-P3 color, when supported. */
 @supports (color: color(display-p3 1 1 1)) {
@@ -234,6 +236,7 @@ but replace 'vi' with 'vw'
     /* Sizes */
     --icon-size: 18px;
     --input-height: 50px;
+    --page-padding: 15px;
   }
 }
 @media all and (max-width: 520px) {

@@ -11,9 +11,11 @@ const Textarea = ({
 }) => {
   return (
     <div className={`${styles["input-container"]} text-color-primary`}>
-      <label htmlFor={name} className={`text-mono-1`}>
-        {label}
-      </label>
+      {label && (
+        <label htmlFor={name} className={`text-mono-1`}>
+          {label}
+        </label>
+      )}
       <div
         className={`${styles["input-container__textarea-resizer-bg"]}`}
       ></div>
