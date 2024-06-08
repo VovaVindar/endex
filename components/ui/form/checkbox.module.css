@@ -1,11 +1,12 @@
 .checkbox-container {
   display: flex;
-  text-wrap: balance;
-  --checkbox-size: clamp(0.9925rem, 0.0001rem + 1.1457vi, 1.8331rem);
+  text-wrap: pretty;
+  --checkbox-size: clamp(0.9925rem, 0.0001rem + 1.1457vw, 1.8331rem);
   --checkbox-gap: clamp(0.75rem, 0.0859rem + 0.7666vw, 1.3125rem);
 }
 .checkbox-container label {
   margin-left: calc(var(--checkbox-size) + var(--checkbox-gap));
+  max-width: 36ch;
 }
 .checkbox {
   position: absolute;

@@ -1,0 +1,51 @@
+.select-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  --checkbox-size: clamp(0.9925rem, 0.0001rem + 1.1457vw, 1.8331rem);
+}
+.select-container label {
+  cursor: pointer;
+  padding-bottom: clamp(0.5rem, -0.0165rem + 0.5963vw, 0.9375rem);
+}
+.select-container select {
+  border-radius: 0px;
+}
+.select-container__select {
+  appearance: none;
+  border: 1px solid transparent;
+  transition: border 0.25s ease;
+  outline: none;
+  padding: clamp(0.625rem, -0.0243rem + 0.7496vw, 1.175rem)
+    clamp(0.75rem, 0.1007rem + 0.7496vw, 1.3rem);
+  height: var(--input-height);
+  width: 100%;
+  position: relative;
+}
+select.select-container__select:focus-visible {
+  border: 1px solid var(--primitive-color-endex-300);
+}
+@media (hover: hover) {
+  select.select-container__select:hover {
+    border: 1px solid var(--primitive-color-endex-300);
+  }
+}
+select.select-container__select:focus-within {
+  border: 1px solid var(--primitive-color-endex-400);
+}
+.select-container option[default] {
+  display: none;
+}
+
+.select-container__arrow {
+  position: absolute;
+  right: clamp(0.75rem, 0.1007rem + 0.7496vw, 1.3rem);
+  bottom: calc(var(--input-height) / 2 - var(--icon-size) / 2);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background-image: url("../../../public/img/icons/chevron-down.svg");
+  background-size: cover;
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+    brightness(102%) contrast(102%);
+}

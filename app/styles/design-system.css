@@ -8,6 +8,10 @@
   --primitive-color-endex-400: hsla(210, 3%, 36%, 1);
   --primitive-color-endex-500: hsla(210, 3%, 62%, 1);
   --primitive-color-endex-600: hsla(0, 0%, 100%, 1);
+
+  /* Sizes */
+  --icon-size: clamp(0.9025rem, 0.0001rem + 1.0417vw, 1.6669rem);
+  --input-height: clamp(2.5125rem, 0.0783rem + 2.8101vw, 4.5744rem);
 }
 /* Display-P3 color, when supported. */
 @supports (color: color(display-p3 1 1 1)) {
@@ -226,6 +230,10 @@ but replace 'vi' with 'vw'
     --token-font-size-6: 14px;
     --token-font-size-7: 14px;
     --token-font-size-5: 18px;
+
+    /* Sizes */
+    --icon-size: 18px;
+    --input-height: 50px;
   }
 }
 @media all and (max-width: 520px) {

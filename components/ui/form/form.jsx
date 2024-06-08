@@ -4,6 +4,7 @@ import { useState } from "react";
 import Input from "@/components/ui/form/input";
 import Textarea from "@/components/ui/form/textarea";
 import Checkbox from "@/components/ui/form/checkbox";
+import Select from "@/components/ui/form/select";
 import { Button } from "@/components/ui/button";
 import styles from "./form.module.css";
 
@@ -96,13 +97,30 @@ export default function Form({
       </div>
       <div className={`${styles["row"]}`}>
         <Input
-          label="Firm Type"
-          name="firm_type"
+          label="Firm Name"
+          name="firm_name"
           type="text"
           handleChange={handleChange}
           required
           ariaRequired={true}
           disabled={isSubmitted || isLoading}
+        />
+        <Select
+          label="Firm Type"
+          name="firm_type"
+          handleChange={handleChange}
+          required
+          ariaRequired={true}
+          disabled={isSubmitted || isLoading}
+          options={[
+            "Hedge Fund",
+            "Private Equity Firm",
+            "Investment Bank",
+            "Asset Management Firm",
+            "Brokerage Firm",
+            "Commercial Bank",
+            "Other",
+          ]}
         />
       </div>
       {addDescription && (

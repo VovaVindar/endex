@@ -57,7 +57,7 @@ textarea.input-container__textarea:focus {
   overflow: hidden;
   overflow-y: visible;
   resize: vertical;
-  min-height: clamp(2.5125rem, 0.0783rem + 2.8101vw, 4.5744rem);
+  min-height: var(--input-height);
   max-height: clamp(14rem, 2.2rem + 12vw, 24rem);
 }
 .input-container__textarea-resizer {
@@ -65,8 +65,8 @@ textarea.input-container__textarea:focus {
   position: absolute;
   right: clamp(0.1875rem, 0.0252rem + 0.1874vw, 0.325rem);
   bottom: clamp(0.1875rem, 0.0252rem + 0.1874vw, 0.325rem);
-  width: clamp(0.9025rem, 0.0001rem + 1.0417vw, 1.6669rem);
-  height: clamp(0.9025rem, 0.0001rem + 1.0417vw, 1.6669rem);
+  width: var(--icon-size);
+  height: var(--icon-size);
   z-index: 1;
 }
 .input-container__textarea-resizer-bg {
@@ -101,12 +101,11 @@ textarea.input-container__textarea:focus {
     padding-bottom: 12px;
   }
   .input-container__input {
-    height: 50px;
+    height: var(--input-height);
   }
   .input-container__input,
   .input-container__textarea {
     padding: 14px 16px;
-    min-height: 50px;
   }
 }
 @media all and (max-width: 520px) {
