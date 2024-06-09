@@ -1,7 +1,7 @@
 import LatestArticle from "@/components/ui/navbar/latest-article";
 import styles from "./page.module.css";
 import { Button } from "@/components/ui/button";
-import ThreeScene from "@/components/ui/three-scene";
+import HomeThree from "@/components/ui/home-three";
 import Link from "next/link";
 import Dialog from "@/components/ui/dialog";
 import Form from "@/components/ui/form/form";
@@ -48,7 +48,7 @@ export default function Home() {
           </p>
         </div>
         <div className={`${styles["hero-right"]}`}>
-          <ThreeScene />
+          <HomeThree />
         </div>
       </div>
     </main>

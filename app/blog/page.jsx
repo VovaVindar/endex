@@ -2,6 +2,7 @@ import styles from "./blog.module.css";
 import Newsletter from "@/components/ui/blog/newsletter";
 import FeaturedArticle from "@/components/ui/blog/featured-article";
 import LatestGrid from "@/components/ui/blog/latest-grid";
+import BlogThree from "@/components/ui/home-three";
 
 export default function Home() {
   return (

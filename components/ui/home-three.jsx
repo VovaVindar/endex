@@ -19,7 +19,7 @@ function isSafariOrIOS() {
   return isSafariOrIOS;
 }
 
-const ThreeScene = () => {
+const HomeThree = () => {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -606,4 +606,4 @@ const ThreeScene = () => {
   return <div ref={mountRef}></div>;
 };
 
-export default ThreeScene;
+export default HomeThree;
