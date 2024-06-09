@@ -19,7 +19,7 @@
   flex-direction: column;
   gap: clamp(0.5rem, -0.0903rem + 0.6814vw, 1rem);
 }
-@media screen and (max-width: 1300px) {
+@media all and (max-width: 1300px) {
   .latest-grid {
     grid-template-columns: repeat(2, 1fr);
   }

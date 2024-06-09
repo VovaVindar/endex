@@ -25,6 +25,7 @@
 .input-container label {
   cursor: pointer;
   padding-bottom: clamp(0.5rem, -0.0165rem + 0.5963vw, 0.9375rem);
+  padding-left: 1px;
 }
 .input-container input,
 .input-container textarea {
@@ -83,8 +84,7 @@ textarea.input-container__textarea:focus {
   );
 }
 .input-container__textarea-resizer img {
-  filter: invert(68%) sepia(6%) saturate(169%) hue-rotate(169deg)
-    brightness(91%) contrast(91%);
+  filter: var(--token-color-icon-secondary);
 }
 .input-container__input::placeholder,
 .input-container__textarea::placeholder {

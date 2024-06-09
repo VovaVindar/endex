@@ -3,6 +3,8 @@ import styles from "./page.module.css";
 import { Button } from "@/components/ui/button";
 import ThreeScene from "@/components/ui/three-scene";
 import Link from "next/link";
+import Dialog from "@/components/ui/dialog";
+import Form from "@/components/ui/form/form";
 
 export default function Home() {
   return (
@@ -22,7 +24,10 @@ export default function Home() {
             domain-specific Models Optimized for Financial Services.
           </p>
           <div className={`${styles["hero-btn-container"]}`}>
-            <Button variant="primary">Contact Sales</Button>
+            <Dialog
+              trigger={<Button variant="primary">Contact Sales</Button>}
+              content={<Form addHeadline={true} headline="Contact Sales" />}
+            />
             <Link href="/custom-deployment">
               <Button variant="secondary" tabIndex="-1">
                 Custom Deployment

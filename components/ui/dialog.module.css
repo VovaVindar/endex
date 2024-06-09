@@ -1,0 +1,47 @@
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 35px;
+}
+.dialog-overlay > div {
+  position: relative;
+}
+.close-button {
+  position: absolute;
+  top: clamp(1.5rem, 0.0243rem + 1.7036vw, 2.75rem);
+  right: clamp(1.5rem, 0.0243rem + 1.7036vw, 2.75rem);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.close-button img {
+  filter: var(--token-color-icon-primary);
+}
+
+@media all and (max-width: 620px) {
+  .dialog-overlay {
+    padding: 15px;
+  }
+  .dialog-overlay > div {
+    width: 100%;
+  }
+  .close-button {
+    top: 14px;
+    right: 14px;
+  }
+}
+@media all and (max-width: 520px) {
+  .dialog-overlay {
+    padding: 14px;
+  }
+}

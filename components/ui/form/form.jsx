@@ -11,9 +11,7 @@ import styles from "./form.module.css";
 import axios from "axios";
 
 export default function Form({
-  addHeadline = false,
-  headline = "Contact Sales",
-  addClose = false,
+  headline,
   cta = "Submit",
   addDescription = false,
   addChecbox = false,
@@ -68,6 +66,14 @@ export default function Form({
       onSubmit={handleSubmit}
       className={`${styles["form-container"]} surface-color-secondary`}
     >
+      {headline && (
+        <h2
+          className={`text-heading-2 text-color-primary`}
+          style={{ marginLeft: "-1px" }}
+        >
+          {headline}
+        </h2>
+      )}
       <div className={`${styles["row"]}`}>
         <Input
           label="First Name"
