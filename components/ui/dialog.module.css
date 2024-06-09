@@ -1,8 +1,22 @@
+.dialog[open] {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
 .dialog {
   background: none;
   border: none;
   padding: 35px;
   overflow: hidden;
+  opacity: 0;
+  transform: scale(0.92) translateY(20px);
+  transition: opacity 0.28s ease, transform 0.28s ease,
+    overlay 0.28s ease allow-discrete, display 0.28s ease allow-discrete;
+}
+@starting-style {
+  .dialog[open] {
+    opacity: 0;
+    transform: scale(0.92) translateY(20px);
+  }
 }
 .dialog::backdrop {
   position: fixed;
@@ -11,44 +25,16 @@
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.55);
-  animation: none;
-}
-.dialog[open] {
-  animation: show-dialog 1s ease;
-}
-.dialog.hide {
-  animation: hide-dialog 1s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease, display 0.5s ease allow-discrete,
+    overlay 0.5s ease allow-discrete;
 }
 .dialog[open]::backdrop {
-  animation: show-backdrop 0.5s ease;
+  opacity: 1;
 }
-.dialog.hide::backdrop {
-  animation: hide-backdrop 0.5s ease;
-}
-@keyframes show-dialog {
-  from {
-    opacity: 0;
-  }
-  to {
+@starting-style {
+  .dialog[open]::backdrop {
     opacity: 1;
-  }
-}
-@keyframes hide-dialog {
-  to {
-    opacity: 0;
-  }
-}
-@keyframes show-backdrop {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes hide-backdrop {
-  to {
-    opacity: 0;
   }
 }
 .dialog > div {
