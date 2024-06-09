@@ -169,6 +169,9 @@ main {
 html:has(.no-scroll) {
   overflow: hidden;
 }
+:focus {
+  outline: none;
+}
 :focus-visible {
   outline: 1px solid var(--primitive-color-endex-600);
   outline-offset: 2px;

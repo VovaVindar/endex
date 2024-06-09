@@ -1,45 +1,43 @@
 "use client";
 
+import { useState, useRef } from "react";
 import styles from "./dialog.module.css";
-import { useState } from "react";
-import ReactDOM from "react-dom";
 import Image from "next/image";
 
 const Dialog = ({ trigger, content }) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const dialogRef = useRef(null);
 
-  const openDialog = () => {
-    setIsDialogOpen(true);
-  };
-
-  const closeDialog = () => {
-    setIsDialogOpen(false);
-  };
-
-  const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      closeDialog();
+  function handleTriggerClick() {
+    if (dialogRef.current) {
+      dialogRef.current.showModal();
+      setIsDialogOpen(true);
     }
-  };
-
-  const dialogContent = (
-    <div
-      className={`${styles["dialog-overlay"]} no-scroll`}
-      onClick={handleOverlayClick}
-    >
-      <div className={styles["dialog-content"]}>
-        <button onClick={closeDialog} className={`${styles["close-button"]}`}>
-          <Image src="/img/icons/close.svg" alt="Close" fill sizes="26px" />
-        </button>
-        {content}
-      </div>
-    </div>
-  );
+  }
 
   return (
     <>
-      <div onClick={openDialog}>{trigger}</div>
-      {isDialogOpen && ReactDOM.createPortal(dialogContent, document.body)}
+      <div onClick={handleTriggerClick}>{trigger}</div>
+      <dialog
+        ref={dialogRef}
+        onClick={(ev) => {
+          const target = ev.target;
+          if (target.nodeName === "DIALOG") {
+            target.close();
+          }
+        }}
+        className={`${styles["dialog"]} ${isDialogOpen ? `no-scroll` : ""}`}
+      >
+        <div>
+          <button
+            onClick={() => dialogRef?.current?.close()}
+            className={`${styles["close-button"]}`}
+          >
+            <Image src="/img/icons/close.svg" alt="Close" fill sizes="26px" />
+          </button>
+          {content}
+        </div>
+      </dialog>
     </>
   );
 };

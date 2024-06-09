@@ -22,7 +22,7 @@ const Select = ({
         aria-required={ariaRequired}
         className={`${styles["select-container__select"]} surface-color-tertiary text-body-2`}
       >
-        <option value="" selected default className="text-color-secondary">
+        <option value="" defaultValue className="text-color-secondary">
           — Select —
         </option>
         {options.map((option, index) => (

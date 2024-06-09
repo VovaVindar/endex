@@ -1,17 +1,57 @@
-.dialog-overlay {
+.dialog {
+  background: none;
+  border: none;
+  padding: 35px;
+  overflow: hidden;
+}
+.dialog::backdrop {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.55);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-  padding: 35px;
+  background-color: rgba(0, 0, 0, 0.55);
+  animation: none;
 }
-.dialog-overlay > div {
+.dialog[open] {
+  animation: show-dialog 1s ease;
+}
+.dialog.hide {
+  animation: hide-dialog 1s ease;
+}
+.dialog[open]::backdrop {
+  animation: show-backdrop 0.5s ease;
+}
+.dialog.hide::backdrop {
+  animation: hide-backdrop 0.5s ease;
+}
+@keyframes show-dialog {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hide-dialog {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes show-backdrop {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hide-backdrop {
+  to {
+    opacity: 0;
+  }
+}
+.dialog > div {
   position: relative;
 }
 .close-button {
@@ -29,10 +69,14 @@
 }
 
 @media all and (max-width: 620px) {
-  .dialog-overlay {
+  .dialog {
     padding: 15px;
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
-  .dialog-overlay > div {
+  .dialog > div {
     width: 100%;
   }
   .close-button {
@@ -41,7 +85,7 @@
   }
 }
 @media all and (max-width: 520px) {
-  .dialog-overlay {
+  .dialog {
     padding: 14px;
   }
 }

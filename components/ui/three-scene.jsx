@@ -599,7 +599,7 @@ const ThreeScene = () => {
         false
       );
 
-      currentRef.removeChild(renderer.domElement);
+      currentRef?.removeChild(renderer.domElement);
     };
   }, []);
 
