@@ -25,7 +25,13 @@ export default function Article() {
             advancement.
           </p>
           <div className={`${articleStyles["article-img"]}`}>
-            <Image src="/img/blog/1.png" alt="Alt text" priority fill />
+            <Image
+              src="/img/blog/1.png"
+              alt="Article image"
+              priority
+              fill
+              sizes="(max-width: 700px) 100vw, 43vw"
+            />
           </div>
           <p>
             While AI has the potential to enhance efficiency, improve

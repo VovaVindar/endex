@@ -45,7 +45,12 @@ const Article = ({
     <div className={`${styles["article"]}`}>
       <Link href={link}>
         <div className={`${styles["article__img"]}`}>
-          <Image src={`/img/blog/${img_id}.png`} alt={alt} fill />
+          <Image
+            src={`/img/blog/${img_id}.png`}
+            alt={alt}
+            fill
+            sizes="(max-width: 1300px) 30.5vw, 28vw"
+          />
         </div>
         <div className={`${styles["article__text"]}`}>
           <h5 className="text-mono-1 text-color-secondary">{date}</h5>

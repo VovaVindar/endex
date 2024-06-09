@@ -40,7 +40,7 @@ export default function Form({
 
     setIsLoading(true);
     try {
-      await axios.post("/api/submit", formData);
+      await axios.post("/api/form-submit", formData);
       // TODO: the API request should be replaced with the actual API endpoint
       setIsSubmitted(true);
       setTimeout(() => {

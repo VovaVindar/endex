@@ -24,7 +24,13 @@ export default function FeaturedArticle() {
         </Link>
       </div>
       <div className={`${styles["featured-article__img"]}`}>
-        <Image src="/img/blog/1.png" alt="Alt text" priority fill />
+        <Image
+          src="/img/blog/1.png"
+          alt="Alt text"
+          priority
+          fill
+          sizes="40vw"
+        />
       </div>
     </div>
   );
