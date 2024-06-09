@@ -22,7 +22,7 @@ export default function Home() {
             domain-specific Models Optimized for Financial Services.
           </p>
           <div className={`${styles["hero-btn-container"]}`}>
-            <Button variant="primary">Join Waitlist</Button>
+            <Button variant="primary">Contact Sales</Button>
             <Link href="/custom-deployment">
               <Button variant="secondary" tabIndex="-1">
                 Custom Deployment
