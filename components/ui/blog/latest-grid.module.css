@@ -24,3 +24,32 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+@media all and (max-width: 1150px) {
+  .latest-grid {
+    column-gap: 8vw;
+    row-gap: 80px;
+  }
+  .article {
+    width: 100%;
+  }
+  .article__img {
+    height: auto;
+    aspect-ratio: 3 / 2;
+  }
+}
+@media all and (max-width: 780px) {
+  .latest-grid {
+    column-gap: 60px;
+  }
+}
+@media all and (max-width: 620px) {
+  .latest-grid {
+    column-gap: 38px;
+  }
+}
+@media all and (max-width: 520px) {
+  .latest-grid {
+    grid-template-columns: 1fr;
+    row-gap: 50px;
+  }
+}

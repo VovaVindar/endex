@@ -12,7 +12,7 @@ export default function Home() {
       <div className={`${styles["hero-container"]}`}>
         <div className={`${styles["hero-left"]}`}>
           <h1 className={`${styles["hero-title"]} text-heading-1`}>
-            Rewriting the Future of Finance.
+            Rewriting the Future of Finance
           </h1>
           <Newsletter />
         </div>

@@ -27,14 +27,40 @@
   justify-content: center;
 }
 .latest-container {
+  width: 100%;
   margin-top: clamp(2.125rem, -0.1624rem + 2.6405vw, 4.0625rem);
   margin-bottom: clamp(15.75rem, -0.0402rem + 18.2283vw, 29.125rem);
   display: flex;
   flex-direction: column;
   gap: clamp(3.5625rem, -0.1268rem + 4.2589vw, 6.6875rem);
 }
+
 @media all and (max-width: 620px) {
+  .hero-left {
+    margin-bottom: 60px;
+  }
   .hero-title {
     margin-left: -1px;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .latest-container {
+    margin-bottom: 140px;
+  }
+}
+@media all and (max-width: 520px) {
+  .hero-left {
+    width: 100%;
+  }
+  .hero-title {
+    margin-bottom: 25px;
+  }
+  .featured-container {
+    margin-top: 60px;
+    margin-bottom: 65px;
+    width: 100%;
+  }
+  .latest-container {
+    gap: 55px;
   }
 }

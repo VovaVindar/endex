@@ -31,6 +31,18 @@ input.newsletter-input:focus {
     height: 54px;
   }
 }
+@media all and (max-width: 620px) {
+  .newsletter-input {
+    padding: 14px 16px;
+    padding-top: 17px;
+    height: 54px;
+  }
+}
+@media all and (max-width: 520px) {
+  .newsletter-container {
+    width: 100%;
+  }
+}
 @media all and (max-width: 355px) {
   .newsletter-input {
     height: 50px;

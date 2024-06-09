@@ -55,10 +55,10 @@
 
   /* Font Size */
   --token-font-size-1: clamp(
-    4.2969rem,
+    4rem,
     -0.0002rem + 5.7294vw,
     9.1669rem
-  ); /* 110px at 1920, 146px at 2560, 79px at 1386, 68.75px at 1200, 40px at 375 */
+  ); /* 110px at 1920, 146px at 2560, 79px at 1386, 64px at 1150, 40px at 375 */
   --token-font-size-2: clamp(
     3.6094rem,
     -0.0002rem + 4.167vw,
@@ -251,6 +251,7 @@ but replace 'vi' with 'vw'
     /* Font Size */
     --token-font-size-1: 40px;
     --token-font-size-2: 40px;
+    --token-font-size-3: 30px;
   }
   .text-heading-1 {
     line-height: 100%;
