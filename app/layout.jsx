@@ -37,6 +37,12 @@ const nbgrotesk = localFont({
 });
 
 export const metadata = {
+  title: {
+    template: "%s | Endex: Modern Financial Intelligence",
+    default: "Endex: Modern Financial Intelligence",
+  },
+  description:
+    "Deploy a secure, generative AI model trained on your internal knowledge. Supercharge your firm with instant context at their fingertips.",
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-192x192.png",
@@ -48,6 +54,29 @@ export const metadata = {
     },
   },
   category: "AI",
+  openGraph: {
+    title: "Endex: Modern Financial Intelligence",
+    description:
+      "Deploy a secure, generative AI model trained on your internal knowledge. Supercharge your firm with instant context at their fingertips.",
+    url: "https://endex.ai/",
+    siteName: "Endex",
+    images: [
+      {
+        url: "https://endex.ai/img/og.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Endex: Modern Financial Intelligence",
+    description:
+      "Deploy a secure, generative AI model trained on your internal knowledge. Supercharge your firm with instant context at their fingertips.",
+    images: ["https://endex.ai/img/og.png"],
+  },
 };
 export const viewport = {
   themeColor: "black",

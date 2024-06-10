@@ -1,6 +1,10 @@
 import styles from "@/app/styles/text.module.css";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Terms of Use",
+};
+
 export default function TermsOfUse() {
   return (
     <main>

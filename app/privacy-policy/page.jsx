@@ -1,5 +1,9 @@
 import styles from "@/app/styles/text.module.css";
 
+export const metadata = {
+  title: "Privacy Policy",
+};
+
 export default function PrivacyPolicy() {
   return (
     <main>

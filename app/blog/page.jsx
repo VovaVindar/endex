@@ -4,7 +4,11 @@ import FeaturedArticle from "@/components/ui/blog/featured-article";
 import LatestGrid from "@/components/ui/blog/latest-grid";
 import BlogThree from "@/components/ui/blog-three";
 
-export default function Home() {
+export const metadata = {
+  title: "Blog",
+};
+
+export default function Blog() {
   return (
     <main
       style={{ padding: "0 var(--page-padding)" }}

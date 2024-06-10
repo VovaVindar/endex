@@ -2,6 +2,10 @@ import textStyles from "@/app/styles/text.module.css";
 import deploymentStyles from "./custom-deployment.module.css";
 import Form from "@/components/ui/form/form";
 
+export const metadata = {
+  title: "Custom Deployment",
+};
+
 export default function CustomDeployment() {
   return (
     <main>
