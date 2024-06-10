@@ -33,7 +33,7 @@ export default function Navbar() {
       >
         <div className={`${styles["desktop"]}`}>
           <Link href="/blog">Blog</Link>
-          <Link href="">Careers</Link>
+          <Link href="https://www.linkedin.com/">Careers</Link>
           <Link href="https://app.endex.ai/">Sign In</Link>
         </div>
         <div
