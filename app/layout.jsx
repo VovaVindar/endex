@@ -37,8 +37,20 @@ const nbgrotesk = localFont({
 });
 
 export const metadata = {
-  title: "Endex Website",
-  description: "",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon-192x192.png",
+    apple: "/apple-touch-icon.png",
+  },
+  appLinks: {
+    web: {
+      url: "https://app.endex.ai/",
+    },
+  },
+  category: "AI",
+};
+export const viewport = {
+  themeColor: "black",
 };
 
 export default function RootLayout({ children }) {

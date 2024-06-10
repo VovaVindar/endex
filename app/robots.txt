@@ -1,0 +1,7 @@
+# *
+User-agent: *
+Allow: /
+Disallow /img/icons/
+
+# Host
+Host: https://endex.ai/
