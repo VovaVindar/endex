@@ -4,7 +4,6 @@
   width: 100%;
 }
 .hero-left {
-  max-width: clamp(38.75rem, 1.119rem + 43.4412vw, 70.625rem);
   margin-top: clamp(5.625rem, 11.9vh, 10.3125rem);
   margin-bottom: clamp(8.5625rem, 18.55vh, 15.875rem);
   width: max-content;
@@ -15,6 +14,7 @@
   line-height: 103%;
   margin-left: clamp(-0.5625rem, 0.25rem + -0.3vw, -0.3125rem);
   margin-bottom: clamp(2.5rem, -0.0825rem + 2.9813vw, 4.6875rem);
+  width: clamp(29.7688rem, 0.0779rem + 42.5295vw, 68.125rem);
 }
 .section-divider {
   width: 100%;
@@ -29,23 +29,85 @@
 .latest-container {
   width: 100%;
   margin-top: clamp(2.125rem, -0.1624rem + 2.6405vw, 4.0625rem);
-  margin-bottom: clamp(15.75rem, -0.0402rem + 18.2283vw, 29.125rem);
+  margin-bottom: clamp(13.5rem, -0.0402rem + 18.2283vw, 29.125rem);
   display: flex;
   flex-direction: column;
   gap: clamp(3.5625rem, -0.1268rem + 4.2589vw, 6.6875rem);
 }
+.hero-right {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.hero-right > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
 
+@media all and (max-width: 1150px) {
+  .hero-left {
+    margin-bottom: clamp(6.25rem, -0.0218rem + 7.2402vw, 11.5625rem);
+  }
+}
+@media all and (max-width: 880px) {
+  .hero-container {
+    grid-template-areas:
+      "b"
+      "a";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    margin-top: -60px;
+  }
+  .hero-left {
+    grid-area: a;
+    margin-top: 0;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: -30px;
+  }
+  .hero-right {
+    grid-area: b;
+    padding-bottom: 0;
+  }
+  .hero-right > div {
+    min-height: 420px;
+  }
+  .latest-container {
+    margin-top: 55px;
+    gap: 50px;
+  }
+  .latest-container h2 {
+    text-align: center;
+  }
+}
 @media all and (max-width: 620px) {
+  .hero-container {
+    margin-top: 20px;
+  }
   .hero-left {
     margin-bottom: 60px;
+    margin-top: -40px;
   }
   .hero-title {
     margin-left: -1px;
     width: 100%;
     margin-bottom: 30px;
   }
+  .hero-right {
+    max-width: 100vw;
+  }
+  .hero-right > div {
+    min-height: 400px;
+    transform: translateX(-25%);
+  }
   .latest-container {
     margin-bottom: 140px;
+  }
+  .latest-container h2 {
+    text-align: left;
   }
 }
 @media all and (max-width: 520px) {
@@ -54,6 +116,7 @@
   }
   .hero-title {
     margin-bottom: 25px;
+    margin-top: 0px;
   }
   .featured-container {
     margin-top: 60px;
@@ -62,5 +125,9 @@
   }
   .latest-container {
     gap: 55px;
+  }
+  .hero-right > div {
+    min-height: 335px;
+    transform: translateX(-20%);
   }
 }

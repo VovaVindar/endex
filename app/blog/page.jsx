@@ -2,7 +2,7 @@ import styles from "./blog.module.css";
 import Newsletter from "@/components/ui/blog/newsletter";
 import FeaturedArticle from "@/components/ui/blog/featured-article";
 import LatestGrid from "@/components/ui/blog/latest-grid";
-import BlogThree from "@/components/ui/home-three";
+import BlogThree from "@/components/ui/blog-three";
 
 export default function Home() {
   return (
@@ -16,6 +16,9 @@ export default function Home() {
             Rewriting the Future of Finance
           </h1>
           <Newsletter />
+        </div>
+        <div className={`${styles["hero-right"]}`}>
+          <BlogThree />
         </div>
       </div>
       <div className={`${styles["section-divider"]} border-divider`}></div>

@@ -7,7 +7,7 @@ import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 
-const HomeThree = () => {
+const BlogThree = () => {
   const mountRef = useRef(null);
 
   useEffect(() => {
@@ -31,7 +31,7 @@ const HomeThree = () => {
       scene.background = new THREE.Color(0x000000);
 
       camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-      camera.position.set(66, 0, 0);
+      camera.position.set(31, 0, 0);
 
       renderer = new THREE.WebGLRenderer({
         powerPreference: "high-performance",
@@ -62,7 +62,6 @@ const HomeThree = () => {
         0.65
       );
 
-      // Use the target in your EffectComposer
       composer = new EffectComposer(renderer, target);
       composer.addPass(renderScene);
       composer.addPass(bloomPass);
@@ -89,13 +88,11 @@ const HomeThree = () => {
         VERTEX_SIZE,
         VERTEX_SIZE
       );
-      const vertexMaterial = new THREE.MeshBasicMaterial({
-        color: 0xffffff,
-      });
+      const vertexMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
 
       const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
       const edges = new THREE.LineSegments(edgeGeometry, edgeMaterial);
-      edges.computeLineDistances(); // Ensure the dashed lines are rendered correctly
+      edges.computeLineDistances();
 
       const cubeGroup = new THREE.Group();
       cubeGroup.add(cube);
@@ -274,7 +271,6 @@ const HomeThree = () => {
         () => onWindowResize(renderer),
         false
       );
-
       currentRef?.removeChild(renderer.domElement);
     };
   }, []);
@@ -282,4 +278,4 @@ const HomeThree = () => {
   return <div ref={mountRef}></div>;
 };
 
-export default HomeThree;
+export default BlogThree;
