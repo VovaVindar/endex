@@ -69,7 +69,7 @@ export default function Form({
       {headline && (
         <h2
           className={`text-heading-2 text-color-primary`}
-          style={{ marginLeft: "-1px" }}
+          style={{ marginLeft: "-1px", textTransform: "capitalize" }}
         >
           {headline}
         </h2>

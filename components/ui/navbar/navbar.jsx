@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import styles from "./navbar.module.css";
 import LatestArticle from "./latest-article";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/ui/footer/footer";
+import Dialog from "@/components/ui/dialog";
+import Form from "@/components/ui/form/form";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,11 +54,13 @@ export default function Navbar() {
             </div>
           </button>
           <div className={`${styles["mobile-links-container"]}`}>
-            <div className={`${styles["navbar-logo"]}`}>
-              {Array.from({ length: 25 }).map((_, index) => (
-                <div key={index}></div>
-              ))}
-            </div>
+            <Link href="/" onClick={() => setIsOpen(false)}>
+              <div className={`${styles["navbar-logo"]}`}>
+                {Array.from({ length: 25 }).map((_, index) => (
+                  <div key={index}></div>
+                ))}
+              </div>
+            </Link>
             <Link href="/" onClick={() => setIsOpen(false)}>
               Home
             </Link>
@@ -72,7 +76,17 @@ export default function Navbar() {
             <Link href="/custom-deployment" onClick={() => setIsOpen(false)}>
               Custom Deployment
             </Link>
-            <Button variant="primary">Join Waitlist</Button>
+            <Dialog
+              trigger={
+                <Button
+                  variant="primary"
+                  className={`${styles["navbar-button"]}`}
+                >
+                  Contact Sales
+                </Button>
+              }
+              content={<Form addHeadline={true} headline="Contact Sales" />}
+            />
             <div className={`${styles["footer-container"]}`}>
               <Footer />
             </div>

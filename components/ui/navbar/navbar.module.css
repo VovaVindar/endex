@@ -61,7 +61,7 @@
 .mobile.mobile-open .mobile-links-container {
   display: flex;
 }
-.mobile-links-container button {
+.mobile-links-container .navbar-button {
   font-size: var(--token-font-size-5);
   background-color: var(--token-color-surface-highlight);
   padding: 0 34px;
