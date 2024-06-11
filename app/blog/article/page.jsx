@@ -10,7 +10,7 @@ export default function Article() {
         <div className={`${textStyles["text"]} text-color-primary text-body-2`}>
           <div className={`${articleStyles["article-details"]}`}>
             <h5 className="text-mono-1 text-color-secondary">
-              Author: Anne Nrandes
+              Author: Anne Brandes
             </h5>
             <h5 className="text-mono-1 text-color-secondary">May 31, 2024</h5>
           </div>
