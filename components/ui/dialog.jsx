@@ -26,7 +26,7 @@ const Dialog = ({ trigger, content }) => {
             target.close();
           }
         }}
-        className={`${styles["dialog"]} ${isDialogOpen ? `no-scroll` : ""}`}
+        className={`${styles["dialog"]}`}
       >
         <div>
           <button
