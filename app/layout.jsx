@@ -7,7 +7,7 @@ import Footer from "@/components/ui/footer/footer";
 const aeonik = localFont({
   src: [
     {
-      path: "./fonts/AeonikTRIAL-Regular.woff2",
+      path: "./fonts/Aeonik-Regular.woff2",
       weight: "400",
       style: "normal",
     },
@@ -20,12 +20,12 @@ const aeonik = localFont({
 const nbgrotesk = localFont({
   src: [
     {
-      path: "./fonts/NBGroteskPro55MNormal-TRIAL.woff2",
+      path: "./fonts/NBGroteskPro55MNormal.woff2",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./fonts/NBGroteskPro75MFett-TRIAL.woff2",
+      path: "./fonts/NBGroteskPro75MFett.woff2",
       weight: "700",
       style: "normal",
     },
