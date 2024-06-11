@@ -55,7 +55,7 @@ const HomeThree = () => {
       BLOOM_STRENGTH = 0;
       PARTICLE_SIZE = 0.05;
       BLENDING = THREE.SubtractiveBlending;
-      PARTICLE_COUNT = 7500;
+      PARTICLE_COUNT = 8500;
     }
 
     // Other constants
