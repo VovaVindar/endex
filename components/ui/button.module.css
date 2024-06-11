@@ -17,6 +17,12 @@
   background: var(--token-color-surface-contrast);
   opacity: 0;
 }
+@media (prefers-color-scheme: light) {
+  .button-primary::after,
+  .button-form::after {
+    background: var(--primitive-color-endex-100);
+  }
+}
 .button-primary,
 .button-secondary,
 .button-form {
@@ -27,12 +33,29 @@
   background-color: var(--token-color-surface-tertiary);
   width: fit-content;
 }
-.button-primary:focus-visible {
-  background-color: var(--token-color-surface-highlight);
+@media (prefers-color-scheme: light) {
+  .button-primary,
+  .button-form {
+    background-color: var(--token-color-surface-contrast);
+    color: var(--primitive-color-endex-0);
+  }
+  .button-primary:focus-visible::after {
+    opacity: 0.1;
+  }
+  @media (hover: hover) {
+    .button-primary:hover::after {
+      opacity: 0.1;
+    }
+  }
 }
-@media (hover: hover) {
-  .button-primary:hover {
+@media (prefers-color-scheme: dark) {
+  .button-primary:focus-visible {
     background-color: var(--token-color-surface-highlight);
+  }
+  @media (hover: hover) {
+    .button-primary:hover {
+      background-color: var(--token-color-surface-highlight);
+    }
   }
 }
 .button-primary:active::after {
@@ -82,6 +105,9 @@
   .button-form:hover::after {
     opacity: 0.1;
   }
+}
+.button-form:active::after {
+  opacity: 0.2;
 }
 @media all and (max-width: 620px) {
   .button-primary,

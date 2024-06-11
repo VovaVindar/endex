@@ -24,7 +24,7 @@ export default function Article() {
             essential to consider the ethical implications of this technological
             advancement.
           </p>
-          <div className={`${articleStyles["article-img"]}`}>
+          <div className={`${articleStyles["article-img"]} border-img`}>
             <Image
               src="/img/blog/1.png"
               alt="Article image"

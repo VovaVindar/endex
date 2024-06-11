@@ -24,7 +24,7 @@ const Textarea = ({
       </div>
       <textarea
         id={name}
-        className={`${styles["input-container__textarea"]} text-body-2 surface-color-tertiary`}
+        className={`${styles["input-container__textarea"]} text-body-2 surface-color-tertiary text-color-primary border-input`}
         placeholder={placeholder}
         name={name}
         required={required}

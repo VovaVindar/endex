@@ -35,7 +35,7 @@ export default function LatestGrid() {
 }
 
 const Article = ({
-  link = 'href="/blog/article',
+  link = "/blog/article",
   alt = "Article cover",
   img_id = 1,
   date = "May 31, 2024",
@@ -44,7 +44,7 @@ const Article = ({
   return (
     <div className={`${styles["article"]}`}>
       <Link href={link}>
-        <div className={`${styles["article__img"]}`}>
+        <div className={`${styles["article__img"]} border-img`}>
           <Image
             src={`/img/blog/${img_id}.png`}
             alt={alt}

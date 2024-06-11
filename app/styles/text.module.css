@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin-bottom: clamp(2.5625rem, 3.7891rem + -0.7666vw, 3.125rem);
+  margin-bottom: clamp(6rem, 3.7891rem + -0.7666vw, 3.125rem);
 }
 .text {
   /*width: clamp(30.9375rem, -0.0527rem + 35.7751vw, 57.1875rem);*/

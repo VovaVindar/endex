@@ -18,7 +18,7 @@ const Input = ({
       )}
       <input
         id={name}
-        className={`${styles["input-container__input"]} text-body-2 surface-color-tertiary`}
+        className={`${styles["input-container__input"]} text-body-2 surface-color-tertiary text-color-primary border-input`}
         type={type}
         placeholder={placeholder}
         name={name}

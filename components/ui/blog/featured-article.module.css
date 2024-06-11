@@ -23,7 +23,6 @@
   width: clamp(34.25rem, -0.0606rem + 39.6082vw, 63.3125rem);
   height: clamp(22.5625rem, 0.0577rem + 25.9796vw, 41.625rem);
   position: relative;
-  border: 1px solid var(--primitive-color-endex-200);
 }
 
 @media all and (max-width: 1150px) {

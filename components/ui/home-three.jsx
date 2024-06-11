@@ -28,7 +28,39 @@ const HomeThree = () => {
     const width = currentRef.offsetWidth;
     const height = Math.min(width, currentRef.offsetHeight);
 
-    // Constants
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Dark mode
+    var BACKGROUND_COLOR = new THREE.Color(0x000000);
+    var LINE_COLOR = new THREE.Color(0.8, 1.0, 1.0);
+    var EDGE_COLOR = new THREE.Color(0x808080);
+    var CUBE_COLOR = new THREE.Color(0x000000);
+    var VERTEX_COLOR = new THREE.Color(0xffffff);
+    var PARTICLE_COLOR_INITIAL = new THREE.Color(0.28, 0.28, 0.28);
+    var PARTICLE_COLOR_TRANSITION = new THREE.Color(0.98, 0.98, 0.98);
+    var BLOOM_STRENGTH = 2.05;
+    var PARTICLE_SIZE = 0.125;
+    var BLENDING = THREE.NormalBlending;
+    var PARTICLE_COUNT = 4500;
+
+    if (!prefersDarkScheme.matches) {
+      // Light theme
+      BACKGROUND_COLOR = new THREE.Color(0xfafafa);
+      LINE_COLOR = new THREE.Color(0, 0, 0);
+      EDGE_COLOR = new THREE.Color(0x000000);
+      CUBE_COLOR = new THREE.Color(0xfafafa);
+      VERTEX_COLOR = new THREE.Color(0x2d2e2f);
+      PARTICLE_COLOR_INITIAL = new THREE.Color(0.5, 0.5, 0.5);
+      PARTICLE_COLOR_TRANSITION = new THREE.Color(1, 1, 1);
+      BLOOM_STRENGTH = 0;
+      PARTICLE_SIZE = 0.055;
+      BLENDING = THREE.SubtractiveBlending;
+      PARTICLE_COUNT = 7000;
+    }
+
+    // Other constants
+    const ROTATE_SPEED = 0.85;
+    var PARTICLES_COLOR_VEC3 = `${PARTICLE_COLOR_INITIAL.r}, ${PARTICLE_COLOR_INITIAL.g}, ${PARTICLE_COLOR_INITIAL.b}`;
     const BROWSER_FACTOR = isSafariOrIOS() ? 1.6 : 3.5;
     const CUBE_SIZE = 8;
     const VERTEX_SIZE = 0.4;
@@ -41,8 +73,6 @@ const HomeThree = () => {
     const FADE_OUT_DURATION = 0.95; // seconds
     const START_VERTEX_INDEX = 0; // Starting vertex index
     const TRANSITION_DELAY = 65; // Delay between cube color transitions in milliseconds
-    const PARTICLES_COLOR = new THREE.Color(0.28, 0.28, 0.28);
-    const PARTICLES_COLOR_VEC3 = `${PARTICLES_COLOR.r}, ${PARTICLES_COLOR.g}, ${PARTICLES_COLOR.b}`;
 
     const VERTEX_OFFSETS = [
       { position: new THREE.Vector3(-4, -4, 4), label: "bottom front right" },
@@ -67,7 +97,7 @@ const HomeThree = () => {
     // Initialize Scene
     function initScene() {
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0x000000);
+      scene.background = BACKGROUND_COLOR;
 
       camera = new THREE.PerspectiveCamera(45, width / height, 1, 1000);
       camera.position.set(66, 0, 0);
@@ -87,7 +117,7 @@ const HomeThree = () => {
       controls.maxPolarAngle = Math.PI / 2;
       controls.minPolarAngle = Math.PI / 2;
       controls.autoRotate = true;
-      controls.autoRotateSpeed = 1.1;
+      controls.autoRotateSpeed = ROTATE_SPEED;
 
       let target = new THREE.WebGLRenderTarget(width, height, {
         samples: 10,
@@ -96,7 +126,7 @@ const HomeThree = () => {
       const renderScene = new RenderPass(scene, camera);
       const bloomPass = new UnrealBloomPass(
         new THREE.Vector2(width, height),
-        2.05,
+        BLOOM_STRENGTH,
         0.8,
         0.65
       );
@@ -174,7 +204,7 @@ const HomeThree = () => {
     uniform float opacity;
     varying vec3 vPosition;
     void main() {
-      gl_FragColor = vec4(0.8, 1.0, 1.0, opacity);
+      gl_FragColor = vec4(${LINE_COLOR.r}, ${LINE_COLOR.g}, ${LINE_COLOR.b}, opacity);
     }
   `,
       transparent: true,
@@ -187,11 +217,11 @@ const HomeThree = () => {
         CUBE_SIZE,
         CUBE_SIZE
       );
-      const cubeMaterial = new THREE.MeshBasicMaterial({ color: 0x000000 });
+      const cubeMaterial = new THREE.MeshBasicMaterial({ color: CUBE_COLOR });
       const edgeGeometry = new THREE.EdgesGeometry(cubeGeometry);
       const edgeMaterial = new THREE.LineDashedMaterial({
-        color: 0x808080,
-        dashSize: 0.15,
+        color: EDGE_COLOR,
+        dashSize: 0.2,
         gapSize: 0.3,
       });
       const vertexGeometry = new THREE.BoxGeometry(
@@ -200,7 +230,7 @@ const HomeThree = () => {
         VERTEX_SIZE
       );
       const vertexMaterial = new THREE.MeshBasicMaterial({
-        color: 0xffffff,
+        color: VERTEX_COLOR,
       });
 
       const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
@@ -266,7 +296,7 @@ const HomeThree = () => {
         );
       };
 
-      let pts = new Array(4500).fill().map((p) => {
+      let pts = new Array(PARTICLE_COUNT).fill().map((p) => {
         sizes.push(Math.random() * 2 + 0.5);
         pushShift();
         return new THREE.Vector3(
@@ -276,7 +306,7 @@ const HomeThree = () => {
         );
       });
 
-      for (let i = 0; i < 4500; i++) {
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
         sizes.push(Math.random() * 1 + 1);
         pushShift();
       }
@@ -285,10 +315,10 @@ const HomeThree = () => {
       g.setAttribute("sizes", new THREE.Float32BufferAttribute(sizes, 1));
       g.setAttribute("shift", new THREE.Float32BufferAttribute(shift, 4));
       let m = new THREE.PointsMaterial({
-        size: 0.125,
+        size: PARTICLE_SIZE,
         transparent: true,
         depthTest: false,
-        blending: THREE.AdditiveBlending,
+        blending: BLENDING,
         onBeforeCompile: (shader) => {
           shader.uniforms.time = gu.time;
           shader.uniforms.color = gu.color;
@@ -493,8 +523,7 @@ const HomeThree = () => {
 
     // Function to transition particle colors
     function transitionParticleColors(particleCube, gu) {
-      const transitionColor = new THREE.Color(0.98, 0.98, 0.98);
-      const originalColor = PARTICLES_COLOR;
+      const originalColor = PARTICLE_COLOR_INITIAL;
 
       let start = {
         r: gu.color.value.r,
@@ -502,9 +531,9 @@ const HomeThree = () => {
         b: gu.color.value.b,
       };
       let end = {
-        r: transitionColor.r,
-        g: transitionColor.g,
-        b: transitionColor.b,
+        r: PARTICLE_COLOR_TRANSITION.r,
+        g: PARTICLE_COLOR_TRANSITION.g,
+        b: PARTICLE_COLOR_TRANSITION.b,
       };
       let duration = FADE_IN_DURATION * 1000 * BROWSER_FACTOR; // Particle color transition duration
       let elapsed = 0;

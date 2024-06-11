@@ -4,7 +4,6 @@
   flex-direction: column;
   position: relative;
   --checkbox-size: clamp(0.9925rem, 0.0001rem + 1.1457vw, 1.8331rem);
-  color: var(--primitive-color-endex-600);
 }
 .select-container label {
   cursor: pointer;
@@ -13,7 +12,6 @@
 }
 .select-container select {
   border-radius: 0px;
-  color: var(--primitive-color-endex-600);
 }
 .select-container__select {
   appearance: none;
@@ -32,6 +30,19 @@ select.select-container__select:focus-visible {
 @media (hover: hover) {
   select.select-container__select:hover {
     border: 1px solid var(--primitive-color-endex-300);
+  }
+}
+@media (prefers-color-scheme: light) {
+  select.select-container__select {
+    border: 1px solid var(--primitive-color-endex-0);
+  }
+  select.select-container__select:focus-visible {
+    border: 1px solid var(--primitive-color-endex-200-alpha-15);
+  }
+  @media (hover: hover) {
+    select.select-container__select:hover {
+      border: 1px solid var(--primitive-color-endex-200-alpha-15);
+    }
   }
 }
 select.select-container__select:focus-within {

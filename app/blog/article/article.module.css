@@ -33,7 +33,6 @@ p.emphasis {
   width: clamp(37rem, 0.0331rem + 42.6746vw, 68.3125rem);
   height: clamp(24.3125rem, -0.0369rem + 28.109vi, 44.9375rem);
   position: relative;
-  border: 1px solid var(--primitive-color-endex-200);
   margin-bottom: clamp(2.9375rem, 0.0598rem + 3.322vw, 5.375rem);
   margin-top: calc(
     clamp(3.125rem, -0.2692rem + 3.9182vi, 6rem) -

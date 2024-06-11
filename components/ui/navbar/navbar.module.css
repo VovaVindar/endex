@@ -27,7 +27,7 @@
   background-color: transparent;
 }
 .navbar-logo div:nth-child(2n) {
-  background-color: white;
+  background-color: var(--primitive-color-endex-600);
 }
 .navbar-links .desktop {
   display: flex;

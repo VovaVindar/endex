@@ -11,7 +11,6 @@
   width: 100%;
   height: clamp(15.75rem, -0.0402rem + 18.2283vw, 29.125rem);
   position: relative;
-  border: 1px solid var(--primitive-color-endex-200);
   margin-bottom: clamp(1.625rem, 0.0017rem + 1.8739vw, 3rem);
 }
 .article__text {

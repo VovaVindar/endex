@@ -93,7 +93,7 @@ const NewsletterInput = ({
   return (
     <input
       id={name}
-      className={`${styles["newsletter-input"]} text-mono-1`}
+      className={`${styles["newsletter-input"]} text-mono-1 text-color-primary`}
       style={{
         backgroundColor: "var(--primitive-color-endex-100-alpha-40)",
       }}

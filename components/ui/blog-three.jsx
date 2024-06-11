@@ -80,7 +80,7 @@ const BlogThree = () => {
       const edgeGeometry = new THREE.EdgesGeometry(cubeGeometry);
       const edgeMaterial = new THREE.LineDashedMaterial({
         color: 0x808080,
-        dashSize: 0.15,
+        dashSize: 0.2,
         gapSize: 0.3,
       });
       const vertexGeometry = new THREE.BoxGeometry(
@@ -175,7 +175,7 @@ const BlogThree = () => {
         size: 0.125,
         transparent: true,
         depthTest: false,
-        blending: THREE.AdditiveBlending,
+        //blending: THREE.AdditiveBlending,
         onBeforeCompile: (shader) => {
           shader.uniforms.time = gu.time;
           shader.uniforms.color = gu.color;

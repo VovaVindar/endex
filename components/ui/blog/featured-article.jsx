@@ -23,7 +23,7 @@ export default function FeaturedArticle() {
           </Button>
         </Link>
       </div>
-      <div className={`${styles["featured-article__img"]}`}>
+      <div className={`${styles["featured-article__img"]} border-img`}>
         <Image
           src="/img/blog/1.png"
           alt="Alt text"

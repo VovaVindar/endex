@@ -40,6 +40,22 @@
 .checkbox:checked + label:before {
   background: var(--token-color-surface-highlight);
 }
+@media (prefers-color-scheme: light) {
+  .checkbox + label:before {
+    border: 1px solid var(--primitive-color-endex-0);
+  }
+  .checkbox:focus-visible + label:before {
+    border: 1px solid var(--primitive-color-endex-200-alpha-15);
+  }
+  @media (hover: hover) {
+    .checkbox:hover + label:before {
+      border: 1px solid var(--primitive-color-endex-200-alpha-15);
+    }
+  }
+  .checkbox:checked + label:before {
+    background: var(--primitive-color-endex-0);
+  }
+}
 .checkbox:disabled + label {
   opacity: 0.7;
   cursor: auto;

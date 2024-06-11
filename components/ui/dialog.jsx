@@ -15,6 +15,13 @@ const Dialog = ({ trigger, content }) => {
     }
   }
 
+  function handleCloseClick() {
+    if (dialogRef.current) {
+      dialogRef.current.close();
+      setIsDialogOpen(false);
+    }
+  }
+
   return (
     <>
       <div onClick={handleTriggerClick}>{trigger}</div>

@@ -50,6 +50,22 @@ textarea.input-container__textarea:focus-visible {
     border: 1px solid var(--primitive-color-endex-300);
   }
 }
+@media (prefers-color-scheme: light) {
+  input.input-container__input,
+  textarea.input-container__textarea {
+    border: 1px solid var(--primitive-color-endex-0);
+  }
+  input.input-container__input:focus,
+  textarea.input-container__textarea:focus {
+    border: 1px solid var(--primitive-color-endex-200-alpha-15);
+  }
+  @media (hover: hover) {
+    input.input-container__input:hover,
+    textarea.input-container__textarea:hover {
+      border: 1px solid var(--primitive-color-endex-200-alpha-15);
+    }
+  }
+}
 input.input-container__input:focus,
 textarea.input-container__textarea:focus {
   border: 1px solid var(--primitive-color-endex-400);

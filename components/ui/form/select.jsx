@@ -20,9 +20,9 @@ const Select = ({
         onChange={handleChange}
         required={required}
         aria-required={ariaRequired}
-        className={`${styles["select-container__select"]} surface-color-tertiary text-body-2`}
+        className={`${styles["select-container__select"]} surface-color-tertiary text-body-2 text-color-primary`}
       >
-        <option value="" defaultValue className="text-color-secondary">
+        <option value="" defaultValue>
           — Select —
         </option>
         {options.map((option, index) => (
