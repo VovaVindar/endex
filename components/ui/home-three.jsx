@@ -49,13 +49,13 @@ const HomeThree = () => {
       LINE_COLOR = new THREE.Color(0, 0, 0);
       EDGE_COLOR = new THREE.Color(0x000000);
       CUBE_COLOR = new THREE.Color(0xfafafa);
-      VERTEX_COLOR = new THREE.Color(0x2d2e2f);
-      PARTICLE_COLOR_INITIAL = new THREE.Color(0.5, 0.5, 0.5);
+      VERTEX_COLOR = new THREE.Color(0x393b3c);
+      PARTICLE_COLOR_INITIAL = new THREE.Color(0.55, 0.55, 0.55);
       PARTICLE_COLOR_TRANSITION = new THREE.Color(1, 1, 1);
       BLOOM_STRENGTH = 0;
-      PARTICLE_SIZE = 0.055;
+      PARTICLE_SIZE = 0.05;
       BLENDING = THREE.SubtractiveBlending;
-      PARTICLE_COUNT = 7000;
+      PARTICLE_COUNT = 7500;
     }
 
     // Other constants
