@@ -2,6 +2,11 @@
   color-scheme: dark;
   font-size: 16px;
 }
+@media (prefers-color-scheme: light) {
+  :root {
+    color-scheme: light;
+  }
+}
 ::selection {
   color: var(--token-color-text-contrast);
   background-color: var(--token-color-surface-contrast);
