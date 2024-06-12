@@ -21,7 +21,7 @@ function isSafariOrIOS() {
 
 const HomeThree = () => {
   const mountRef = useRef(null);
-  const [theme, setTheme] = useState(null);
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");

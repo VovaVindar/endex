@@ -9,7 +9,7 @@ import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPa
 
 const BlogThree = () => {
   const mountRef = useRef(null);
-  const [theme, setTheme] = useState(null);
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
