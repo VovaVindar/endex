@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import styles from "./featured-article.module.css";
 import Link from "next/link";
 import Image from "next/image";
+import imgSrc from "../../../public/img/blog/1.png";
 
 export default function FeaturedArticle() {
   return (
@@ -25,7 +26,7 @@ export default function FeaturedArticle() {
       </div>
       <div className={`${styles["featured-article__img"]} border-img`}>
         <Image
-          src="/img/blog/1.png"
+          src={imgSrc}
           alt="Alt text"
           priority
           fill

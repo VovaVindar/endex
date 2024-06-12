@@ -2,6 +2,7 @@ import textStyles from "@/app/styles/text.module.css";
 import articleStyles from "./article.module.css";
 import Newsletter from "@/components/ui/blog/newsletter";
 import Image from "next/image";
+import imgSrc from "../../../public/img/blog/1.png";
 
 export default function Article() {
   return (
@@ -26,7 +27,7 @@ export default function Article() {
           </p>
           <div className={`${articleStyles["article-img"]} border-img`}>
             <Image
-              src="/img/blog/1.png"
+              src={imgSrc}
               alt="Article image"
               priority
               placeholder="blur"
