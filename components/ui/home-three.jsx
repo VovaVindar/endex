@@ -80,7 +80,7 @@ const HomeThree = () => {
         theme === "dark" ? THREE.NormalBlending : THREE.SubtractiveBlending;
       const PARTICLE_COUNT = theme === "dark" ? 4500 : 8200;
 
-      const ROTATE_SPEED = 0.85;
+      const ROTATE_SPEED = 0.8;
       const PARTICLES_COLOR_VEC3 = `${PARTICLE_COLOR_INITIAL.r}, ${PARTICLE_COLOR_INITIAL.g}, ${PARTICLE_COLOR_INITIAL.b}`;
       const BROWSER_FACTOR = isSafariOrIOS() ? 1.6 : 3.5;
       const CUBE_SIZE = 8;
@@ -446,6 +446,13 @@ const HomeThree = () => {
           );
         }
 
+        // Set a timeout to remove and dispose the line after it has faded out
+        setTimeout(() => {
+          line.geometry.dispose();
+          line.material.dispose();
+          mainGroup.remove(line);
+        }, FADE_OUT_DELAY + FADE_OUT_DURATION * 1000);
+
         return line;
       }
 
@@ -520,6 +527,8 @@ const HomeThree = () => {
       function resetConnections() {
         activeLines.forEach((lineObj) => {
           scene.remove(lineObj.line);
+          lineObj.line.geometry.dispose();
+          lineObj.line.material.dispose();
         });
 
         activeLines = [];
@@ -640,6 +649,17 @@ const HomeThree = () => {
       return () => {
         window.removeEventListener("resize", onWindowResize, false);
         currentRef?.removeChild(renderer.domElement);
+        renderer.dispose();
+        scene.traverse((object) => {
+          if (object.geometry) object.geometry.dispose();
+          if (object.material) {
+            if (Array.isArray(object.material)) {
+              object.material.forEach((material) => material.dispose());
+            } else {
+              object.material.dispose();
+            }
+          }
+        });
       };
     };
 
