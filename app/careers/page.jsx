@@ -51,7 +51,7 @@ export default function Careers() {
 
 function TableRow({ role, location, link }) {
   return (
-    <Link href={link} className={`${styles["table-row"]}`}>
+    <div href={link} className={`${styles["table-row"]}`}>
       <div className={`${styles["table-cell"]}`}>
         <p>{role}</p>
       </div>
@@ -69,7 +69,9 @@ function TableRow({ role, location, link }) {
           />
         </div>
       </div>
-      <div className={`${styles["table-border"]} border-divider`}></div>
-    </Link>
+      <div
+        className={`${styles["table-border"]} border-divider safari_only`}
+      ></div>
+    </div>
   );
 }

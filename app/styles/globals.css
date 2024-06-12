@@ -266,3 +266,11 @@ canvas {
   touch-action: pan-y;
   background-color: var(--token-color-surface-primary);
 }
+
+@supports (background: -webkit-named-image(i)) {
+  .safari_only {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+}

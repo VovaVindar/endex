@@ -26,6 +26,7 @@
 .careers-table > div {
   width: 100%;
   display: table;
+  position: relative;
 }
 .table-row {
   position: relative;
@@ -46,6 +47,7 @@
   display: table-cell;
   padding-top: clamp(0.75rem, -0.0985rem + 0.9796vw, 1.4688rem);
   padding-bottom: clamp(0.6875rem, -0.1241rem + 0.937vw, 1.375rem);
+  position: relative;
 }
 .table-row .table-cell p {
   padding-right: 15px;
@@ -60,7 +62,7 @@
 }
 @media all and (max-width: 620px) {
   .careers-heading {
-    margin-top: 90px;
+    margin-top: 95px;
   }
   .careers-description {
     margin-top: 25px;
