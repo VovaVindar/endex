@@ -23,34 +23,37 @@ export default function Careers() {
       <div className={`${styles["careers-table"]}`}>
         <p className="text-mono-1-bold">Open Roles:</p>
         <div className="text-mono-1">
-          <TableRow link={"https://www.linkedin.com/company/endexai/jobs/"}>
-            <div className={`${styles["table-cell"]}`}>
-              Director of Machine Learning
-            </div>
-            <div className={`${styles["table-cell"]}`}>NYC</div>
-          </TableRow>
-          <TableRow link={"https://www.linkedin.com/company/endexai/jobs/"}>
-            <div className={`${styles["table-cell"]}`}>UI/UX Designer</div>
-            <div className={`${styles["table-cell"]}`}>NYC</div>
-          </TableRow>
-          <TableRow link={"https://www.linkedin.com/company/endexai/jobs/"}>
-            <div className={`${styles["table-cell"]}`}>Data Scientist</div>
-            <div className={`${styles["table-cell"]}`}>Silicon Valley</div>
-          </TableRow>
-          <TableRow link={"https://www.linkedin.com/company/endexai/jobs/"}>
-            <div className={`${styles["table-cell"]}`}>Software Engineer</div>
-            <div className={`${styles["table-cell"]}`}>Silicon Valley</div>
-          </TableRow>
+          <TableRow
+            role={"Director of Machine Learning"}
+            location={"NYC"}
+            link={"https://www.linkedin.com/company/endexai/jobs/"}
+          ></TableRow>
+          <TableRow
+            role={"UI/UX Designer"}
+            location={"NYC"}
+            link={"https://www.linkedin.com/company/endexai/jobs/"}
+          ></TableRow>
+          <TableRow
+            role={"Data Scientist"}
+            location={"Silicon Valley"}
+            link={"https://www.linkedin.com/company/endexai/jobs/"}
+          ></TableRow>
+          <TableRow
+            role={"Software Engineer"}
+            location={"Silicon Valley"}
+            link={"https://www.linkedin.com/company/endexai/jobs/"}
+          ></TableRow>
         </div>
       </div>
     </main>
   );
 }
 
-function TableRow({ children, link }) {
+function TableRow({ role, location, link }) {
   return (
     <Link href={link} className={`${styles["table-row"]}`}>
-      {children}
+      <div className={`${styles["table-cell"]}`}>{role}</div>
+      <div className={`${styles["table-cell"]}`}>{location}</div>
       <div className={`${styles["table-cell"]}`}>
         <div>Apply</div>
         <div className={`${styles["table-arrow"]}`}>
