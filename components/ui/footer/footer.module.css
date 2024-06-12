@@ -14,6 +14,9 @@
   align-items: center;
   gap: clamp(1.875rem, -0.0434rem + 2.2147vw, 3.5rem);
 }
+.footer a:hover {
+  text-decoration: underline;
+}
 @media all and (min-width: 2561px) {
   .footer {
     left: auto;

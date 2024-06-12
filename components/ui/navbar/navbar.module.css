@@ -15,6 +15,12 @@
   flex-direction: row;
   align-items: center;
   gap: clamp(1.5625rem, -0.0608rem + 1.8739vw, 2.9375rem);
+  position: relative;
+}
+.navbar-left p {
+  position: absolute;
+  width: max-content;
+  top: clamp(0rem, -0.2705rem + 0.2863vw, 0.1875rem);
 }
 .navbar-logo {
   width: clamp(1.1875rem, 0.0069rem + 1.3629vw, 2.1875rem);
@@ -29,6 +35,21 @@
   flex-direction: row;
   align-items: center;
   gap: clamp(1.875rem, -0.0434rem + 2.2147vw, 3.5rem);
+}
+.navbar-links a:hover {
+  text-decoration: underline;
+}
+.circle-link {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(0.42rem, -0.0052rem + 0.5111vw, 0.8125rem);
+}
+.circle-link div {
+  border-radius: 100%;
+  width: clamp(0.3156rem, -0.0002rem + 0.3646vw, 0.5831rem);
+  height: clamp(0.3156rem, -0.0002rem + 0.3646vw, 0.5831rem);
+  background-color: var(--token-color-surface-contrast);
+  margin-top: clamp(0.265rem, 0.1468rem + 0.0903vw, 0.2913rem);
 }
 .navbar-links .mobile {
   display: none;

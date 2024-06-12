@@ -25,7 +25,9 @@ export default function Navbar() {
         </Link>
         {!pathname.includes("/blog") && (
           <div>
-            <LatestArticle />
+            <Link href="/blog/article" className={`${styles["circle-link"]}`}>
+              <LatestArticle />
+            </Link>
           </div>
         )}
       </div>
@@ -33,8 +35,16 @@ export default function Navbar() {
         className={`${styles["navbar-links"]} text-mono-2 text-color-primary`}
       >
         <div className={`${styles["desktop"]}`}>
-          <Link href="/blog">Blog</Link>
-          <Link href="https://www.linkedin.com/">Careers</Link>
+          <Link href="/blog" className={`${styles["circle-link"]}`}>
+            {pathname.includes("/blog") && <div></div>}
+            Blog
+          </Link>
+          <Link
+            href="https://www.linkedin.com/"
+            className={`${styles["circle-link"]}`}
+          >
+            {pathname.includes("/careers") && <div></div>}Careers
+          </Link>
           <Link href="https://app.endex.ai/">Sign In</Link>
         </div>
         <div

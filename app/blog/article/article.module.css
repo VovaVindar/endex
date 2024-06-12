@@ -23,19 +23,19 @@ p.emphasis {
   width: 2px;
   height: calc(
     100% - clamp(1.125rem, -0.0556rem + 1.3629vw, 2.125rem) +
-      (clamp(-0.3125rem, 0.0964rem + -0.2555vi, -0.125rem) * -3)
+      (clamp(-0.3125rem, 0.0964rem + -0.2555vw, -0.125rem) * -3)
   );
   left: 0;
-  top: clamp(-0.3125rem, 0.0964rem + -0.2555vi, -0.125rem);
+  top: clamp(-0.3125rem, 0.0964rem + -0.2555vw, -0.125rem);
   background-color: var(--primitive-color-endex-600);
 }
 .article-img {
   width: clamp(37rem, 0.0331rem + 42.6746vw, 68.3125rem);
-  height: clamp(24.3125rem, -0.0369rem + 28.109vi, 44.9375rem);
+  height: clamp(24.3125rem, -0.0369rem + 28.109vw, 44.9375rem);
   position: relative;
   margin-bottom: clamp(2.9375rem, 0.0598rem + 3.322vw, 5.375rem);
   margin-top: calc(
-    clamp(3.125rem, -0.2692rem + 3.9182vi, 6rem) -
+    clamp(3.125rem, -0.2692rem + 3.9182vw, 6rem) -
       clamp(1.125rem, -0.0556rem + 1.3629vw, 2.125rem)
   );
   margin-left: calc(
