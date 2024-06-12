@@ -76,3 +76,8 @@
     margin-top: 50px;
   }
 }
+@media all and (max-width: 450px) {
+  .table-cell {
+    height: 60px;
+  }
+}
