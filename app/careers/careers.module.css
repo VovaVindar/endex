@@ -10,7 +10,6 @@
   margin-top: clamp(2.3125rem, 0.0989rem + 2.5554vw, 4.1875rem);
   width: 100%;
   max-width: clamp(21.9375rem, 0.023rem + 25.2981vw, 40.5rem);
-  text-wrap: pretty;
 }
 .careers-table {
   margin-top: clamp(4.4375rem, -0.3586rem + 5.5366vw, 8.5rem);
@@ -79,5 +78,16 @@
 @media all and (max-width: 450px) {
   .table-cell {
     height: 60px;
+  }
+}
+@media all and (max-width: 422px) {
+  .careers-description {
+    font-size: 16px;
+    max-width: 370px;
+  }
+}
+@media all and (max-width: 379px) {
+  .careers-description {
+    max-width: 290px;
   }
 }
