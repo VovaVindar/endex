@@ -29,6 +29,7 @@ export default function Article() {
               src="/img/blog/1.png"
               alt="Article image"
               priority
+              placeholder="blur"
               fill
               sizes="(max-width: 700px) 100vw, 43vw"
             />

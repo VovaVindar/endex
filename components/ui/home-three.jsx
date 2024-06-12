@@ -73,7 +73,7 @@ const HomeThree = () => {
           ? new THREE.Color(0.98, 0.98, 0.98)
           : new THREE.Color(1, 1, 1);
       const BLOOM_STRENGTH = theme === "dark" ? 2.05 : 0;
-      const PARTICLE_SIZE = theme === "dark" ? 0.125 : 0.05;
+      const PARTICLE_SIZE = theme === "dark" ? 0.125 : 0.052;
       const BLENDING =
         theme === "dark" ? THREE.NormalBlending : THREE.SubtractiveBlending;
       const PARTICLE_COUNT = theme === "dark" ? 4500 : 8200;

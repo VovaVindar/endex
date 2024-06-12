@@ -30,6 +30,7 @@ export default function FeaturedArticle() {
           priority
           fill
           sizes="40vw"
+          placeholder="blur"
         />
       </div>
     </div>

@@ -50,6 +50,7 @@ const Article = ({
             alt={alt}
             fill
             sizes="(max-width: 1300px) 30.5vw, 28vw"
+            placeholder="blur"
           />
         </div>
         <div className={`${styles["article__text"]}`}>
