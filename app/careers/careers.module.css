@@ -4,6 +4,7 @@
 .careers-heading {
   margin-top: clamp(3.5rem, 7.6vh, 6.5rem);
   text-wrap: pretty;
+  line-height: 103%;
 }
 .careers-description {
   margin-top: clamp(2.3125rem, 0.0989rem + 2.5554vw, 4.1875rem);
@@ -18,6 +19,7 @@
   display: flex;
   flex-direction: column;
   gap: clamp(0.7rem, -0.0104rem + 1.0221vw, 1.25rem);
+  margin-bottom: 100px;
 }
 .careers-table p {
   width: fit-content;
@@ -46,6 +48,9 @@
   padding-top: clamp(0.75rem, -0.0985rem + 0.9796vw, 1.4688rem);
   padding-bottom: clamp(0.6875rem, -0.1241rem + 0.937vw, 1.375rem);
 }
+.table-row .table-cell p {
+  padding-right: 15px;
+}
 .table-cell .table-arrow {
   position: absolute;
   right: 0;
@@ -53,4 +58,21 @@
   height: clamp(0.6319rem, 0.0003rem + 0.7291vw, 1.1669rem);
   width: clamp(0.6319rem, 0.0003rem + 0.7291vw, 1.1669rem);
   filter: var(--token-color-icon-primary);
+}
+@media all and (max-width: 620px) {
+  .careers-heading {
+    margin-top: 90px;
+  }
+  .careers-description {
+    margin-top: 25px;
+    max-width: 25rem;
+  }
+}
+@media all and (max-width: 520px) {
+  .careers-description {
+    margin-top: 15px;
+  }
+  .careers-table {
+    margin-top: 50px;
+  }
 }

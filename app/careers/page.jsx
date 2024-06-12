@@ -52,10 +52,14 @@ export default function Careers() {
 function TableRow({ role, location, link }) {
   return (
     <Link href={link} className={`${styles["table-row"]}`}>
-      <div className={`${styles["table-cell"]}`}>{role}</div>
-      <div className={`${styles["table-cell"]}`}>{location}</div>
       <div className={`${styles["table-cell"]}`}>
-        <div>Apply</div>
+        <p>{role}</p>
+      </div>
+      <div className={`${styles["table-cell"]}`}>
+        <p>{location}</p>
+      </div>
+      <div className={`${styles["table-cell"]}`}>
+        <p>Apply</p>
         <div className={`${styles["table-arrow"]}`}>
           <Image
             src="/img/icons/table-link.svg"
