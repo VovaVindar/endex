@@ -39,10 +39,7 @@ export default function Navbar() {
             {pathname.includes("/blog") && <div></div>}
             Blog
           </Link>
-          <Link
-            href="https://www.linkedin.com/"
-            className={`${styles["circle-link"]}`}
-          >
+          <Link href="/careers" className={`${styles["circle-link"]}`}>
             {pathname.includes("/careers") && <div></div>}Careers
           </Link>
           <Link href="https://app.endex.ai/">Sign In</Link>
@@ -74,7 +71,7 @@ export default function Navbar() {
             <Link href="/blog" onClick={() => setIsOpen(false)}>
               Blog
             </Link>
-            <Link href="" onClick={() => setIsOpen(false)}>
+            <Link href="/careers" onClick={() => setIsOpen(false)}>
               Careers
             </Link>
             <Link href="https://app.endex.ai/" onClick={() => setIsOpen(false)}>

@@ -1,0 +1,56 @@
+.careers-container {
+  display: block;
+}
+.careers-heading {
+  margin-top: clamp(3.5rem, 7.6vh, 6.5rem);
+  text-wrap: pretty;
+}
+.careers-description {
+  margin-top: clamp(2.3125rem, 0.0989rem + 2.5554vw, 4.1875rem);
+  width: 100%;
+  max-width: clamp(21.9375rem, 0.023rem + 25.2981vw, 40.5rem);
+  text-wrap: pretty;
+}
+.careers-table {
+  margin-top: clamp(4.4375rem, -0.3586rem + 5.5366vw, 8.5rem);
+  width: 100%;
+  max-width: clamp(39.375rem, -0.0268rem + 45.4855vw, 72.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.7rem, -0.0104rem + 1.0221vw, 1.25rem);
+}
+.careers-table p {
+  width: fit-content;
+}
+.careers-table > div {
+  width: 100%;
+  display: table;
+}
+.table-row {
+  position: relative;
+  cursor: pointer;
+  display: table-row;
+}
+.table-row:hover {
+  text-decoration: underline;
+}
+.table-border {
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 1px;
+  bottom: 0;
+}
+.table-row .table-cell {
+  display: table-cell;
+  padding-top: clamp(0.75rem, -0.0985rem + 0.9796vw, 1.4688rem);
+  padding-bottom: clamp(0.6875rem, -0.1241rem + 0.937vw, 1.375rem);
+}
+.table-cell .table-arrow {
+  position: absolute;
+  right: 0;
+  top: clamp(0.8875rem, -0.057rem + 1.0903vw, 1.6875rem);
+  height: clamp(0.6319rem, 0.0003rem + 0.7291vw, 1.1669rem);
+  width: clamp(0.6319rem, 0.0003rem + 0.7291vw, 1.1669rem);
+  filter: var(--token-color-icon-primary);
+}

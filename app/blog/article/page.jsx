@@ -4,6 +4,10 @@ import Newsletter from "@/components/ui/blog/newsletter";
 import Image from "next/image";
 import imgSrc from "../../../public/img/blog/1.png";
 
+export const metadata = {
+  title: "Article",
+};
+
 export default function Article() {
   return (
     <main>
