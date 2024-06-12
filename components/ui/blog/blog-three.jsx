@@ -56,7 +56,7 @@ const BlogThree = () => {
       const PARTICLE_SIZE = theme === "dark" ? 0.125 : 0.05;
       const BLENDING =
         theme === "dark" ? THREE.NormalBlending : THREE.SubtractiveBlending;
-      const PARTICLE_COUNT = theme === "dark" ? 5000 : 9500;
+      const PARTICLE_COUNT = theme === "dark" ? 5000 : 10000;
 
       const PARTICLES_COLOR_VEC3 = `${PARTICLE_COLOR_INITIAL.r}, ${PARTICLE_COLOR_INITIAL.g}, ${PARTICLE_COLOR_INITIAL.b}`;
       const ROTATE_SPEED = 0.85;

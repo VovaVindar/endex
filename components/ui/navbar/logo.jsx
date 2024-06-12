@@ -207,8 +207,8 @@ export const EndexLogoAnimated = ({ loadingSpeed = 200 }) => {
 
   return (
     <div
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onPointerEnter={() => setIsHovered(true)}
+      onPointerLeave={() => setIsHovered(false)}
     >
       <CurrentSvg />
     </div>
