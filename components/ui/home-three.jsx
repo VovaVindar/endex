@@ -61,26 +61,34 @@ const HomeThree = () => {
       const CUBE_COLOR =
         theme === "dark"
           ? new THREE.Color(0x000000)
-          : new THREE.Color(0xfafafa);
+          : new THREE.Color(0x3e4041);
+      const CUBE_TRANSPARENT = theme === "dark" ? false : true;
+      const CUBE_OPACITY = theme === "dark" ? 1.0 : 0.06;
       const VERTEX_COLOR =
         theme === "dark"
           ? new THREE.Color(0xffffff)
-          : new THREE.Color(0x393b3c);
+          : new THREE.Color(0x3e4041);
       const PARTICLE_COLOR_INITIAL =
         theme === "dark"
           ? new THREE.Color(0.28, 0.28, 0.28)
-          : new THREE.Color(0.55, 0.55, 0.55);
+          : new THREE.Color(0.5, 0.5, 0.5);
       const PARTICLE_COLOR_TRANSITION =
         theme === "dark"
           ? new THREE.Color(0.98, 0.98, 0.98)
-          : new THREE.Color(1, 1, 1);
-      const BLOOM_STRENGTH = theme === "dark" ? 2.05 : 0;
-      const PARTICLE_SIZE = theme === "dark" ? 0.125 : 0.052;
+          : new THREE.Color(0, 0, 0);
+      const BLOOM_STRENGTH = theme === "dark" ? 2 : 0;
+      const PARTICLE_SIZE = theme === "dark" ? 0.125 : 0.065;
+      const PARTICLES_TRANSPARENT = theme === "dark" ? true : false;
+      const PARTICLES_DEPTH_TEST = theme === "dark" ? false : true;
       const BLENDING =
-        theme === "dark" ? THREE.NormalBlending : THREE.SubtractiveBlending;
-      const PARTICLE_COUNT = theme === "dark" ? 4500 : 8200;
+        theme === "dark" ? THREE.NormalBlending : THREE.NormalBlending;
+      const PARTICLE_COUNT = theme === "dark" ? 4500 : 8000;
+      const FADE_IN_DURATION = theme === "dark" ? 0.95 : 1.4; // seconds
+      const FADE_OUT_DURATION = theme === "dark" ? 0.95 : 1.4; // seconds
+      const FADE_OUT_DELAY = theme === "dark" ? 700 : 1100; // milliseconds
+      const INTERVAL = theme === "dark" ? 700 : 900; // delay between iterations
 
-      const ROTATE_SPEED = 0.8;
+      const ROTATE_SPEED = 0.3;
       const PARTICLES_COLOR_VEC3 = `${PARTICLE_COLOR_INITIAL.r}, ${PARTICLE_COLOR_INITIAL.g}, ${PARTICLE_COLOR_INITIAL.b}`;
       const BROWSER_FACTOR = isSafariOrIOS() ? 1.6 : 3.5;
       const CUBE_SIZE = 8;
@@ -88,10 +96,6 @@ const HomeThree = () => {
       const GRID_SIZE = 5;
       const SPACING = 8.0028;
       const MAX_ITERATIONS = 13;
-      const FADE_IN_DURATION = 0.95; // seconds
-      const FADE_OUT_DELAY = 700; // milliseconds
-      const INTERVAL = 700; // delay between iterations
-      const FADE_OUT_DURATION = 0.95; // seconds
       const START_VERTEX_INDEX = 0; // Starting vertex index
       const TRANSITION_DELAY = 65; // Delay between cube color transitions in milliseconds
 
@@ -149,7 +153,7 @@ const HomeThree = () => {
           new THREE.Vector2(width, height),
           BLOOM_STRENGTH,
           0.8,
-          0.65
+          0.55
         );
 
         // Use the target in your EffectComposer
@@ -238,7 +242,11 @@ const HomeThree = () => {
           CUBE_SIZE,
           CUBE_SIZE
         );
-        const cubeMaterial = new THREE.MeshBasicMaterial({ color: CUBE_COLOR });
+        const cubeMaterial = new THREE.MeshBasicMaterial({
+          color: CUBE_COLOR,
+          transparent: CUBE_TRANSPARENT,
+          opacity: CUBE_OPACITY,
+        });
         const edgeGeometry = new THREE.EdgesGeometry(cubeGeometry);
         const edgeMaterial = new THREE.LineDashedMaterial({
           color: EDGE_COLOR,
@@ -337,8 +345,8 @@ const HomeThree = () => {
         g.setAttribute("shift", new THREE.Float32BufferAttribute(shift, 4));
         let m = new THREE.PointsMaterial({
           size: PARTICLE_SIZE,
-          transparent: true,
-          depthTest: false,
+          transparent: PARTICLES_TRANSPARENT,
+          depthTest: PARTICLES_DEPTH_TEST,
           blending: BLENDING,
           onBeforeCompile: (shader) => {
             shader.uniforms.time = gu.time;

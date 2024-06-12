@@ -45,23 +45,27 @@ const BlogThree = () => {
       const CUBE_COLOR =
         theme === "dark"
           ? new THREE.Color(0x000000)
-          : new THREE.Color(0xfafafa);
+          : new THREE.Color(0x3e4041);
+      const CUBE_TRANSPARENT = theme === "dark" ? false : true;
+      const CUBE_OPACITY = theme === "dark" ? 1.0 : 0.06;
       const VERTEX_COLOR =
         theme === "dark"
           ? new THREE.Color(0xffffff)
-          : new THREE.Color(0x393b3c);
+          : new THREE.Color(0x3e4041);
       const PARTICLE_COLOR_INITIAL =
         theme === "dark"
           ? new THREE.Color(0.28, 0.28, 0.28)
-          : new THREE.Color(0.55, 0.55, 0.55);
-      const BLOOM_STRENGTH = theme === "dark" ? 2.05 : 0;
-      const PARTICLE_SIZE = theme === "dark" ? 0.125 : 0.05;
+          : new THREE.Color(0.5, 0.5, 0.5);
+      const BLOOM_STRENGTH = theme === "dark" ? 2 : 0;
+      const PARTICLE_SIZE = theme === "dark" ? 0.125 : 0.065;
+      const PARTICLES_TRANSPARENT = theme === "dark" ? true : false;
+      const PARTICLES_DEPTH_TEST = theme === "dark" ? false : true;
       const BLENDING =
-        theme === "dark" ? THREE.NormalBlending : THREE.SubtractiveBlending;
-      const PARTICLE_COUNT = theme === "dark" ? 5000 : 10200;
+        theme === "dark" ? THREE.NormalBlending : THREE.NormalBlending;
+      const PARTICLE_COUNT = theme === "dark" ? 5000 : 9500;
 
       const PARTICLES_COLOR_VEC3 = `${PARTICLE_COLOR_INITIAL.r}, ${PARTICLE_COLOR_INITIAL.g}, ${PARTICLE_COLOR_INITIAL.b}`;
-      const ROTATE_SPEED = 0.8;
+      const ROTATE_SPEED = 0.3;
       const CUBE_SIZE = 8;
       const VERTEX_SIZE = 0.4;
 
@@ -119,7 +123,11 @@ const BlogThree = () => {
           CUBE_SIZE,
           CUBE_SIZE
         );
-        const cubeMaterial = new THREE.MeshBasicMaterial({ color: CUBE_COLOR });
+        const cubeMaterial = new THREE.MeshBasicMaterial({
+          color: CUBE_COLOR,
+          transparent: CUBE_TRANSPARENT,
+          opacity: CUBE_OPACITY,
+        });
         const edgeGeometry = new THREE.EdgesGeometry(cubeGeometry);
         const edgeMaterial = new THREE.LineDashedMaterial({
           color: EDGE_COLOR,
@@ -218,8 +226,8 @@ const BlogThree = () => {
         g.setAttribute("shift", new THREE.Float32BufferAttribute(shift, 4));
         let m = new THREE.PointsMaterial({
           size: PARTICLE_SIZE,
-          transparent: true,
-          depthTest: false,
+          transparent: PARTICLES_TRANSPARENT,
+          depthTest: PARTICLES_DEPTH_TEST,
           blending: BLENDING,
           onBeforeCompile: (shader) => {
             shader.uniforms.time = gu.time;
