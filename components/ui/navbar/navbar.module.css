@@ -17,17 +17,12 @@
   gap: clamp(1.5625rem, -0.0608rem + 1.8739vw, 2.9375rem);
 }
 .navbar-logo {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
   width: clamp(1.1875rem, 0.0069rem + 1.3629vw, 2.1875rem);
   height: clamp(1.1875rem, 0.0069rem + 1.3629vw, 2.1875rem);
 }
-.navbar-logo div {
-  background-color: transparent;
-}
-.navbar-logo div:nth-child(2n) {
-  background-color: var(--primitive-color-endex-600);
+.navbar-logo > div {
+  width: 100%;
+  height: 100%;
 }
 .navbar-links .desktop {
   display: flex;

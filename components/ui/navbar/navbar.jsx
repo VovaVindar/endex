@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { EndexLogo, EndexLogoAnimated } from "@/components/ui/navbar/logo";
 import Link from "next/link";
 import styles from "./navbar.module.css";
 import LatestArticle from "./latest-article";
@@ -19,9 +20,7 @@ export default function Navbar() {
       <div className={`${styles["navbar-left"]}`}>
         <Link href="/">
           <div className={`${styles["navbar-logo"]}`}>
-            {Array.from({ length: 25 }).map((_, index) => (
-              <div key={index}></div>
-            ))}
+            <EndexLogoAnimated />
           </div>
         </Link>
         {!pathname.includes("/blog") && (
@@ -56,9 +55,7 @@ export default function Navbar() {
           <div className={`${styles["mobile-links-container"]}`}>
             <Link href="/" onClick={() => setIsOpen(false)}>
               <div className={`${styles["navbar-logo"]}`}>
-                {Array.from({ length: 25 }).map((_, index) => (
-                  <div key={index}></div>
-                ))}
+                <EndexLogo />
               </div>
             </Link>
             <Link href="/" onClick={() => setIsOpen(false)}>
