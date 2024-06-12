@@ -28,6 +28,8 @@ const BlogThree = () => {
   }, []);
 
   useEffect(() => {
+    if (!theme) return;
+
     const currentRef = mountRef.current;
 
     const width = currentRef.offsetWidth;
