@@ -130,6 +130,7 @@ h6 {
 a {
   text-decoration: none;
   color: inherit;
+  width: fit-content;
 }
 
 /* Hidden elements (by me) */

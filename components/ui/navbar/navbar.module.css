@@ -74,9 +74,6 @@
   font-size: var(--token-font-size-5);
   display: none;
 }
-.mobile-links-container a {
-  width: fit-content;
-}
 .mobile.mobile-open .mobile-links-container {
   display: flex;
 }

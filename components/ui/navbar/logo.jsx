@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 const Svg1 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@ const Svg1 = ({ size = 19 }) => (
 
 const Svg2 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ const Svg2 = ({ size = 19 }) => (
 
 const Svg3 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const Svg3 = ({ size = 19 }) => (
 
 const Svg4 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const Svg4 = ({ size = 19 }) => (
 
 const Svg5 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ const Svg5 = ({ size = 19 }) => (
 
 const Svg6 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -86,7 +86,7 @@ const Svg6 = ({ size = 19 }) => (
 
 const Svg7 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +105,7 @@ const Svg7 = ({ size = 19 }) => (
 
 const Svg8 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -126,7 +126,7 @@ const Svg8 = ({ size = 19 }) => (
 
 const Svg9 = ({ size = 19 }) => (
   <svg
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     viewBox="0 0 19 19"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -149,7 +149,7 @@ const Svg9 = ({ size = 19 }) => (
 export const Svg10 = ({ size = 19 }) => (
   <svg
     viewBox="0 0 19 19"
-    style={{ width: "100%", paddingBottom: "100%" }}
+    style={{ width: "100%", height: "100%" }}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
