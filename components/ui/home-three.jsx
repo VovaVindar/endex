@@ -98,7 +98,8 @@ const HomeThree = () => {
       const GRID_SIZE = 5;
       const SPACING = 8.0028;
       const MAX_ITERATIONS = 13;
-      const START_VERTEX_INDEX = 0; // Starting vertex index
+      const START_VERTEX_INDEX = 2; // Starting vertex index
+      const START_CUBE_INDEX = 6; // Starting cube index
       const TRANSITION_DELAY = 65; // Delay between cube color transitions in milliseconds
 
       const VERTEX_OFFSETS = [
@@ -119,7 +120,7 @@ const HomeThree = () => {
         activeLines = [],
         connectedVertices = new Map(),
         uniqueConnections = new Set();
-      let currentStartCubeIndex = 1;
+      let currentStartCubeIndex = START_CUBE_INDEX;
 
       // Initialize Scene
       function initScene() {
@@ -436,8 +437,8 @@ const HomeThree = () => {
       // Create line between vertices
       function createLine(fromVertex, toVertex) {
         const lineGeometry = new THREE.BufferGeometry().setFromPoints([
-          fromVertex,
-          toVertex,
+          fromVertex.clone(),
+          toVertex.clone(),
         ]);
         const line = new THREE.Line(lineGeometry, lineMaterial.clone());
         mainGroup.add(line);
@@ -467,9 +468,30 @@ const HomeThree = () => {
       }
 
       // Find connecting vertices within a sphere radius
-      function findConnectingVertices(fromVertex) {
-        const sphere = new THREE.Sphere(fromVertex, SPACING);
+      function findConnectingVertices(fromVertex, isVisual) {
+        const sphere = new THREE.Sphere(fromVertex.clone(), SPACING);
         const newConnectingVertices = [];
+
+        if (isVisual) {
+          // Create a sphere geometry and mesh for visualization
+          const sphereGeometry = new THREE.SphereGeometry(SPACING, 32, 32);
+          const sphereMaterial = new THREE.MeshBasicMaterial({
+            color: 0xffff00,
+            wireframe: true,
+          });
+          const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
+
+          // Position the sphere mesh at the fromVertex location
+          sphereMesh.position.copy(fromVertex);
+
+          // Add the sphere mesh to the scene
+          scene.add(sphereMesh);
+
+          // Remove the sphere from the scene after some time to avoid cluttering
+          setTimeout(() => {
+            scene.remove(sphereMesh);
+          }, 10000); // Adjust the timeout duration as needed
+        }
 
         cubeLocations.forEach((location) => {
           VERTEX_OFFSETS.forEach((offset) => {
@@ -489,10 +511,14 @@ const HomeThree = () => {
       }
 
       // Initiate new connections from a starting vertex
-      function initiateNewConnections(currentVertex, depth = 0) {
+      function initiateNewConnections(
+        currentVertex,
+        depth = 0,
+        isVisual = false
+      ) {
         if (depth >= MAX_ITERATIONS) return; // Limit iterations of lines drawing
 
-        const newVertices = findConnectingVertices(currentVertex);
+        const newVertices = findConnectingVertices(currentVertex, isVisual);
         if (!connectedVertices.has(currentVertex)) {
           connectedVertices.set(currentVertex, new Set());
         }
@@ -545,13 +571,17 @@ const HomeThree = () => {
         connectedVertices.clear();
         uniqueConnections.clear();
 
-        currentStartCubeIndex =
-          (currentStartCubeIndex + 1) % cubeLocations.length;
+        //currentStartCubeIndex =
+        //(currentStartCubeIndex + 1) % cubeLocations.length;
+        currentStartCubeIndex == 6
+          ? (currentStartCubeIndex = 7)
+          : (currentStartCubeIndex = 6);
 
         const startCube = cubeLocations[currentStartCubeIndex];
         const startVertex = VERTEX_OFFSETS[START_VERTEX_INDEX].position
           .clone()
           .add(startCube.cube.position);
+
         setTimeout(() => {
           initiateNewConnections(startVertex);
         }, INTERVAL);
@@ -633,15 +663,17 @@ const HomeThree = () => {
       mainGroup = new THREE.Group();
       initScene();
       createGrid();
+
       const startCube = cubeLocations[currentStartCubeIndex];
       const startVertex = VERTEX_OFFSETS[START_VERTEX_INDEX].position
         .clone()
         .add(startCube.cube.position);
+
       initiateNewConnections(startVertex);
 
-      mainGroup.rotation.x = THREE.MathUtils.degToRad(-110);
-      mainGroup.rotation.y = THREE.MathUtils.degToRad(-31);
-      mainGroup.rotation.z = THREE.MathUtils.degToRad(-30);
+      scene.rotation.x = THREE.MathUtils.degToRad(-110);
+      scene.rotation.y = THREE.MathUtils.degToRad(-31);
+      scene.rotation.z = THREE.MathUtils.degToRad(-30);
 
       // Handle window resize
       function onWindowResize() {
