@@ -13,18 +13,12 @@ const BlogThree = () => {
 
   useEffect(() => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const handleThemeChange = (e) => {
-      setTheme(e.matches ? "dark" : "light");
-    };
-
-    setTheme(prefersDarkScheme.matches ? "dark" : "light"); // Set the initial theme
-
+    const handleThemeChange = (e) => setTheme(e.matches ? "dark" : "light");
     prefersDarkScheme.addEventListener("change", handleThemeChange);
+    setTheme(prefersDarkScheme.matches ? "dark" : "light");
 
-    return () => {
+    return () =>
       prefersDarkScheme.removeEventListener("change", handleThemeChange);
-    };
   }, []);
 
   useEffect(() => {

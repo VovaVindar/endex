@@ -8,15 +8,12 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 
 function isSafariOrIOS() {
-  const navigator = window.navigator;
   const ua = navigator.userAgent.toLowerCase();
-
-  const isSafariOrIOS =
+  return (
     (/safari/.test(ua) && !/chrome/.test(ua) && /version\//.test(ua)) ||
     /iPad|iPhone|iPod/.test(navigator.platform) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1); // Added check for iOS devices
-
-  return isSafariOrIOS;
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+  );
 }
 
 const HomeThree = () => {
@@ -25,18 +22,12 @@ const HomeThree = () => {
 
   useEffect(() => {
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-    const handleThemeChange = (e) => {
-      setTheme(e.matches ? "dark" : "light");
-    };
-
+    const handleThemeChange = (e) => setTheme(e.matches ? "dark" : "light");
     prefersDarkScheme.addEventListener("change", handleThemeChange);
+    setTheme(prefersDarkScheme.matches ? "dark" : "light");
 
-    setTheme(prefersDarkScheme.matches ? "dark" : "light"); // Set the initial theme
-
-    return () => {
+    return () =>
       prefersDarkScheme.removeEventListener("change", handleThemeChange);
-    };
   }, []);
 
   useEffect(() => {
@@ -85,8 +76,8 @@ const HomeThree = () => {
       const BLENDING =
         theme === "dark" ? THREE.NormalBlending : THREE.NormalBlending;
       const PARTICLE_COUNT = theme === "dark" ? 4500 : 8000;
-      const FADE_IN_DURATION = theme === "dark" ? 0.95 : 1.4; // seconds
-      const FADE_OUT_DURATION = theme === "dark" ? 0.95 : 1.4; // seconds
+      const FADE_IN_DURATION = theme === "dark" ? 1.1 : 1.4; // seconds
+      const FADE_OUT_DURATION = theme === "dark" ? 1.1 : 1.4; // seconds
       const FADE_OUT_DELAY = theme === "dark" ? 700 : 1100; // milliseconds
       const INTERVAL = theme === "dark" ? 700 : 900; // delay between iterations
 
@@ -99,7 +90,6 @@ const HomeThree = () => {
       const SPACING = 8.0028;
       const MAX_ITERATIONS = 13;
       const START_VERTEX_INDEX = 2; // Starting vertex index
-      const START_CUBE_INDEX = 6; // Starting cube index
       const TRANSITION_DELAY = 65; // Delay between cube color transitions in milliseconds
 
       const VERTEX_OFFSETS = [
@@ -120,7 +110,7 @@ const HomeThree = () => {
         activeLines = [],
         connectedVertices = new Map(),
         uniqueConnections = new Set();
-      let currentStartCubeIndex = START_CUBE_INDEX;
+      let currentStartCubeIndex = 6;
 
       // Initialize Scene
       function initScene() {
@@ -437,8 +427,8 @@ const HomeThree = () => {
       // Create line between vertices
       function createLine(fromVertex, toVertex) {
         const lineGeometry = new THREE.BufferGeometry().setFromPoints([
-          fromVertex.clone(),
-          toVertex.clone(),
+          fromVertex,
+          toVertex,
         ]);
         const line = new THREE.Line(lineGeometry, lineMaterial.clone());
         mainGroup.add(line);
@@ -468,30 +458,9 @@ const HomeThree = () => {
       }
 
       // Find connecting vertices within a sphere radius
-      function findConnectingVertices(fromVertex, isVisual) {
+      function findConnectingVertices(fromVertex) {
         const sphere = new THREE.Sphere(fromVertex.clone(), SPACING);
         const newConnectingVertices = [];
-
-        if (isVisual) {
-          // Create a sphere geometry and mesh for visualization
-          const sphereGeometry = new THREE.SphereGeometry(SPACING, 32, 32);
-          const sphereMaterial = new THREE.MeshBasicMaterial({
-            color: 0xffff00,
-            wireframe: true,
-          });
-          const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
-
-          // Position the sphere mesh at the fromVertex location
-          sphereMesh.position.copy(fromVertex);
-
-          // Add the sphere mesh to the scene
-          scene.add(sphereMesh);
-
-          // Remove the sphere from the scene after some time to avoid cluttering
-          setTimeout(() => {
-            scene.remove(sphereMesh);
-          }, 10000); // Adjust the timeout duration as needed
-        }
 
         cubeLocations.forEach((location) => {
           VERTEX_OFFSETS.forEach((offset) => {
@@ -511,14 +480,10 @@ const HomeThree = () => {
       }
 
       // Initiate new connections from a starting vertex
-      function initiateNewConnections(
-        currentVertex,
-        depth = 0,
-        isVisual = false
-      ) {
+      function initiateNewConnections(currentVertex, depth = 0) {
         if (depth >= MAX_ITERATIONS) return; // Limit iterations of lines drawing
 
-        const newVertices = findConnectingVertices(currentVertex, isVisual);
+        const newVertices = findConnectingVertices(currentVertex);
         if (!connectedVertices.has(currentVertex)) {
           connectedVertices.set(currentVertex, new Set());
         }
@@ -573,9 +538,7 @@ const HomeThree = () => {
 
         //currentStartCubeIndex =
         //(currentStartCubeIndex + 1) % cubeLocations.length;
-        currentStartCubeIndex == 6
-          ? (currentStartCubeIndex = 7)
-          : (currentStartCubeIndex = 6);
+        currentStartCubeIndex = currentStartCubeIndex == 6 ? 7 : 6;
 
         const startCube = cubeLocations[currentStartCubeIndex];
         const startVertex = VERTEX_OFFSETS[START_VERTEX_INDEX].position
