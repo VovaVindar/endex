@@ -263,6 +263,7 @@ select:-webkit-autofill:focus {
 }
 
 canvas {
+  outline: none;
   touch-action: pan-y;
   background-color: var(--token-color-surface-primary);
 }

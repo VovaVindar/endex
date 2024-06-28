@@ -123,7 +123,7 @@ const HomeThree = () => {
         renderer = new THREE.WebGLRenderer({
           powerPreference: "high-performance",
         });
-        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         renderer.setSize(width, height);
         currentRef.appendChild(renderer.domElement);
 
@@ -154,7 +154,7 @@ const HomeThree = () => {
         composer.addPass(renderScene);
         composer.addPass(bloomPass);
         composer.setSize(width, height);
-        composer.setPixelRatio(window.devicePixelRatio);
+        composer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
         clock = new THREE.Clock();
 
