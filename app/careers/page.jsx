@@ -1,5 +1,4 @@
 import styles from "./careers.module.css";
-import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
