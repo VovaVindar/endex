@@ -55,7 +55,7 @@
   filter: var(--token-color-icon-primary);
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .dialog {
     padding: 15px;
     width: 100%;

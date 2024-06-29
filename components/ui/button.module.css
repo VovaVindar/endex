@@ -110,7 +110,7 @@
 .button-form:active::after {
   opacity: 0.2;
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .button-primary,
   .buttom-form {
     padding: 0 34px;

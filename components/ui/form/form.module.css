@@ -107,7 +107,7 @@ textarea.input-container__textarea:focus {
   color: var(--primitive-color-endex-500);
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .form-container {
     width: 100%;
     padding: 40px 15px 50px 15px;

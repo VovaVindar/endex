@@ -60,7 +60,7 @@
   width: clamp(0.6319rem, 0.0003rem + 0.7291vw, 1.1669rem);
   filter: var(--token-color-icon-primary);
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .careers-heading {
     margin-top: 95px;
   }

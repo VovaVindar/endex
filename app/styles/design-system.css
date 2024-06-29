@@ -273,7 +273,7 @@ but replace 'vi' with 'vw'
   border: 1px solid var(--token-color-border-img);
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   :root {
     /* Font Size */
     --token-font-size-6: 14px;

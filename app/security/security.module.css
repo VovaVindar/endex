@@ -1,0 +1,24 @@
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.security-heading {
+  margin-top: clamp(5.3125rem, 11.5vh, 9.8rem);
+  text-wrap: pretty;
+  line-height: 103%;
+}
+.security-description {
+  margin-top: clamp(2.3125rem, 0.0989rem + 2.5554vw, 4.1875rem);
+  width: 100%;
+  max-width: clamp(26.25rem, 1.2365rem + 28.8756vw, 47.4375rem);
+  text-align: center;
+}
+.hero-btn-container {
+  margin-top: clamp(2.5625rem, -0.0938rem + 3.0664vw, 4.8125rem);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(1.5625rem, -0.0608rem + 1.8739vw, 2.9375rem);
+}

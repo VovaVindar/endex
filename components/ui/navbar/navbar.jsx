@@ -25,7 +25,7 @@ export default function Navbar() {
         </Link>
         {!pathname.includes("/blog") && (
           <div>
-            <Link href="/blog/article" className={`${styles["circle-link"]}`}>
+            <Link href="/blog/article">
               <LatestArticle />
             </Link>
           </div>
@@ -38,6 +38,9 @@ export default function Navbar() {
           <Link href="/blog" className={`${styles["circle-link"]}`}>
             {pathname.includes("/blog") && <div></div>}
             Blog
+          </Link>
+          <Link href="/security" className={`${styles["circle-link"]}`}>
+            {pathname.includes("/security") && <div></div>}Security
           </Link>
           <Link href="/careers" className={`${styles["circle-link"]}`}>
             {pathname.includes("/careers") && <div></div>}Careers
@@ -70,6 +73,9 @@ export default function Navbar() {
             </Link>
             <Link href="/blog" onClick={() => setIsOpen(false)}>
               Blog
+            </Link>
+            <Link href="/security" onClick={() => setIsOpen(false)}>
+              Security
             </Link>
             <Link href="/careers" onClick={() => setIsOpen(false)}>
               Careers

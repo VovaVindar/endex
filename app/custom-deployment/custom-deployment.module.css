@@ -8,7 +8,7 @@
   margin-top: clamp(1.8125rem, 0.3368rem + 1.7036vw, 3.0625rem);
   margin-bottom: clamp(6.75rem, 12vh, 12.5rem);
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .deployment-headline {
     width: 100%;
   }

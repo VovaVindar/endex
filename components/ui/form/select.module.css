@@ -63,7 +63,7 @@ select.select-container__select:focus-within {
   filter: var(--token-color-icon-primary);
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .select-container label {
     padding-bottom: 12px;
   }

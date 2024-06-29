@@ -72,7 +72,7 @@
   padding-bottom: 0;
 }
 
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .text-container {
     margin-bottom: 90px;
   }

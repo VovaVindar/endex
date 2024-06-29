@@ -81,7 +81,7 @@
     position: absolute;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .hero-description {
     min-width: 0;
     max-width: 100%;

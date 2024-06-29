@@ -31,14 +31,14 @@ input.newsletter-input:focus-visible {
 input.newsletter-input:focus {
   border: 1px solid var(--primitive-color-endex-400);
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .newsletter-input {
     padding: 14px 16px;
     padding-top: 17px;
     height: 54px;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .newsletter-input {
     padding: 14px 16px;
     padding-top: 17px;

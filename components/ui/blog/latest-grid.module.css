@@ -44,7 +44,7 @@
     column-gap: 60px;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .latest-grid {
     column-gap: 38px;
   }

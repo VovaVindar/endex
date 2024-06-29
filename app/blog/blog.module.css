@@ -83,7 +83,7 @@
     text-align: center;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .hero-container {
     margin-top: 20px;
   }

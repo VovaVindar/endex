@@ -31,6 +31,7 @@
   height: 100%;
 }
 .navbar-links .desktop {
+  margin-top: 2px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -102,7 +103,7 @@
     left: auto;
   }
 }
-@media all and (max-width: 620px) {
+@media all and (max-width: 660px) {
   .navbar {
     padding-bottom: 20px;
     background-color: var(--token-color-surface-primary);
