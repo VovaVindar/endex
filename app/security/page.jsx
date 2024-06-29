@@ -1,11 +1,14 @@
 import styles from "./security.module.css";
 import Dialog from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
+import Form from "@/components/ui/form/form";
+import Link from "next/link";
 
 export const metadata = {
   title: "Security & Privacy",
 };
 
-export default function Careers() {
+export default function Security() {
   return (
     <main style={{ padding: "0 var(--page-padding)" }}>
       <div className={`${styles["hero-container"]}`}>
