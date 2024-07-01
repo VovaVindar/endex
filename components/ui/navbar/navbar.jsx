@@ -98,7 +98,7 @@ export default function Navbar() {
               content={<Form addHeadline={true} headline="Contact Sales" />}
             />
             <div className={`${styles["footer-container"]}`}>
-              <Footer />
+              <Footer closeMenu={() => setIsOpen(false)} />
             </div>
           </div>
         </div>

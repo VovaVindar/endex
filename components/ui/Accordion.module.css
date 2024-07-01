@@ -1,0 +1,35 @@
+.panel {
+  border-bottom: 1px solid black;
+}
+.panel:last-of-type {
+  border: none;
+}
+.panel-heading {
+  display: block;
+  width: 100%;
+  padding: clamp(2.875rem, -0.0027rem + 3.322vw, 5.3125rem) 0px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+.panel-heading:after {
+  content: "\002b";
+  float: right;
+  transition: transform 0.25s linear;
+}
+.panel-heading[aria-expanded="true"]:after {
+  content: "\2212";
+  transform: rotate(90deg);
+}
+.panel-collapse {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+}
+.panel-collapse.in {
+  max-height: 1000px; /* Set a high value to ensure proper animation */
+}
+.panel-body {
+  padding-bottom: clamp(2.875rem, -0.0027rem + 3.322vw, 5.3125rem);
+}

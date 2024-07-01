@@ -293,7 +293,7 @@ but replace 'vi' with 'vw'
 
     /* Font Size */
     --token-font-size-1: 40px;
-    --token-font-size-2: 40px;
+    --token-font-size-2: 34px;
     --token-font-size-3: 30px;
   }
   .text-heading-1 {

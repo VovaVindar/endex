@@ -3,10 +3,30 @@ import Dialog from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import Form from "@/components/ui/form/form";
 import Link from "next/link";
+import Image from "next/image";
+import Accordion from "@/components/ui/accordion";
 
 export const metadata = {
   title: "Security & Privacy",
 };
+
+const accordionItems = [
+  {
+    title: "Who can see my data",
+    content:
+      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid...",
+  },
+  {
+    title: "Who can access my data",
+    content:
+      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid...",
+  },
+  {
+    title: "What type of data is collected",
+    content:
+      "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid...",
+  },
+];
 
 export default function Security() {
   return (
@@ -40,6 +60,14 @@ export default function Security() {
           </h2>
           <div className={`${styles["standards-grid"]}`}>
             <div className="surface-color-secondary">
+              <div className={`${styles["standards-icon"]}`}>
+                <Image
+                  src="/img/icons/security/privacy.svg"
+                  alt="Privacy Icon"
+                  fill
+                  sizes="69px"
+                />
+              </div>
               <h4 className="text-heading-4">Privacy Concerns</h4>
               <ul className="text-body-2">
                 <li>
@@ -51,6 +79,14 @@ export default function Security() {
               </ul>
             </div>
             <div className="surface-color-secondary">
+              <div className={`${styles["standards-icon"]}`}>
+                <Image
+                  src="/img/icons/security/cloud.svg"
+                  alt="Cloud Icon"
+                  fill
+                  sizes="80px"
+                />
+              </div>
               <h4 className="text-heading-4">Cloud</h4>
               <ul className="text-body-2">
                 <li>We use AWS cloud</li>
@@ -59,6 +95,14 @@ export default function Security() {
               </ul>
             </div>
             <div className="surface-color-secondary">
+              <div className={`${styles["standards-icon"]}`}>
+                <Image
+                  src="/img/icons/security/encryption.svg"
+                  alt="Cloud Icon"
+                  fill
+                  sizes="80px"
+                />
+              </div>
               <h4 className="text-heading-4">Encryption</h4>
               <ul className="text-body-2">
                 <li>Everything is encrypted</li>
@@ -67,6 +111,14 @@ export default function Security() {
               </ul>
             </div>
             <div className="surface-color-secondary">
+              <div className={`${styles["standards-icon"]}`}>
+                <Image
+                  src="/img/icons/security/branch.svg"
+                  alt="Cloud Icon"
+                  fill
+                  sizes="80px"
+                />
+              </div>
               <h4 className="text-heading-4">Custom Deployments</h4>
               <ul className="text-body-2">
                 <li>We do custom deployments</li>
@@ -77,6 +129,9 @@ export default function Security() {
           </div>
         </div>
         <div className={`${styles["security-border"]} border-divider`}></div>
+      </div>
+      <div className={`${styles["security-faq"]}`}>
+        <Accordion items={accordionItems} />
       </div>
     </main>
   );
