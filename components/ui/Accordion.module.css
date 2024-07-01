@@ -32,4 +32,15 @@
 }
 .panel-body {
   padding-bottom: clamp(2.875rem, -0.0027rem + 3.322vw, 5.3125rem);
+  width: 100%;
+  max-width: 60ch;
+  text-wrap: pretty;
+}
+@media all and (max-width: 455px) {
+  .panel-heading {
+    padding: 30px 0;
+  }
+  .panel-body {
+    padding-bottom: 30px;
+  }
 }

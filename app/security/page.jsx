@@ -131,6 +131,7 @@ export default function Security() {
         <div className={`${styles["security-border"]} border-divider`}></div>
       </div>
       <div className={`${styles["security-faq"]}`}>
+        <p className="text-mono-1 text-color-primary">FAQ</p>
         <Accordion items={accordionItems} />
       </div>
     </main>
