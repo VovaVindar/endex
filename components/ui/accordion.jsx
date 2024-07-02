@@ -31,7 +31,7 @@ const Accordion = ({ items }) => {
           <div role="tab">
             <h4 className={`text-heading-3`}>
               <button
-                className={`${styles["panel-heading"]}`}
+                className={`${styles["panel-heading"]} text-color-primary`}
                 aria-expanded={activePanel === index}
                 onClick={() => togglePanel(index)}
               >

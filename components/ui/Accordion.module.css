@@ -13,6 +13,7 @@
   border: none;
   text-align: left;
   cursor: pointer;
+  user-select: none;
 }
 .panel-collapse {
   overflow: hidden;
