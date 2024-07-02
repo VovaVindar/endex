@@ -31,11 +31,15 @@ const Accordion = ({ items }) => {
           <div role="tab">
             <h4 className={`text-heading-3`}>
               <button
-                className={styles["panel-heading"]}
+                className={`${styles["panel-heading"]}`}
                 aria-expanded={activePanel === index}
                 onClick={() => togglePanel(index)}
               >
                 {item.title}
+                <div className={`${styles["plus-icon"]}`}>
+                  <div></div>
+                  <div></div>
+                </div>
               </button>
             </h4>
           </div>

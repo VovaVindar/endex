@@ -1,5 +1,6 @@
 .panel {
   border-bottom: 1px solid black;
+  position: relative;
 }
 .panel:last-of-type {
   border: none;
@@ -12,15 +13,6 @@
   border: none;
   text-align: left;
   cursor: pointer;
-}
-.panel-heading:after {
-  content: "\002b";
-  float: right;
-  transition: transform 0.25s linear;
-}
-.panel-heading[aria-expanded="true"]:after {
-  content: "\2212";
-  transform: rotate(90deg);
 }
 .panel-collapse {
   overflow: hidden;
@@ -36,9 +28,48 @@
   max-width: 60ch;
   text-wrap: pretty;
 }
+.panel-heading .plus-icon {
+  width: clamp(1.5625rem, 0.0499rem + 1.7462vw, 2.8438rem);
+  height: clamp(1.5625rem, 0.0499rem + 1.7462vw, 2.8438rem);
+  position: absolute;
+  right: 0;
+  top: clamp(3.4375rem, 0.1171rem + 3.833vw, 6.25rem);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+.panel-heading .plus-icon div {
+  background-color: var(--token-color-surface-contrast);
+  width: 100%;
+  height: 0.071875rem;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+.panel-heading .plus-icon div:nth-child(1) {
+  transform: rotate(90deg);
+}
+.panel-heading[aria-expanded="true"] .plus-icon div:nth-child(1) {
+  transform: rotate(0deg);
+}
+.panel-heading[aria-expanded="true"] .plus-icon {
+  transform: rotate(180deg);
+}
+@media all and (max-width: 520px) {
+  .panel-heading .plus-icon {
+    top: 50px;
+  }
+}
 @media all and (max-width: 455px) {
   .panel-heading {
     padding: 30px 0;
+  }
+  .panel-heading .plus-icon {
+    top: 36px;
+    width: 22px;
+    height: 22px;
   }
   .panel-body {
     padding-bottom: 30px;
