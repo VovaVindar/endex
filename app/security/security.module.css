@@ -55,6 +55,9 @@
   max-height: clamp(2.6875rem, -0.0426rem + 3.1516vw, 5rem);
   position: relative;
 }
+.standards-icon img {
+  filter: var(--token-color-icon-primary);
+}
 .standards-grid div {
   width: 100%;
   height: 100%;

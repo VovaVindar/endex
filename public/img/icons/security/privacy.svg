@@ -1,14 +1,14 @@
 <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M52.425 43.2199L27.2864 60.3072L1.575 43.216V1.575H52.425V43.2199Z" stroke="#202122" stroke-width="1.15"/>
-<mask id="mask0_588_702" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="52" height="60">
+<path d="M52.425 43.2199L27.2864 60.3072L1.575 43.216V1.575H52.425V43.2199Z" stroke="black" stroke-width="1.15"/>
+<mask id="mask0_2015_763" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="1" y="1" width="52" height="60">
 <path d="M53 43.5243L27.29 61L1 43.5243V1H53V43.5243Z" fill="#D9D9D9"/>
 </mask>
-<g mask="url(#mask0_588_702)">
-<line x1="48.3068" y1="63.3838" x2="48.3068" y2="-0.376221" stroke="#202122" stroke-width="1.15"/>
-<line x1="44.1867" y1="63.3838" x2="44.1867" y2="-0.376221" stroke="#202122" stroke-width="1.15"/>
-<line x1="40.0666" y1="63.3838" x2="40.0666" y2="-0.376221" stroke="#202122" stroke-width="1.15"/>
-<line x1="35.9465" y1="63.3838" x2="35.9465" y2="-0.376221" stroke="#202122" stroke-width="1.15"/>
-<line x1="31.8264" y1="63.3838" x2="31.8264" y2="-0.376221" stroke="#202122" stroke-width="1.15"/>
-<line x1="27.7063" y1="63.3838" x2="27.7063" y2="-0.376221" stroke="#202122" stroke-width="1.15"/>
+<g mask="url(#mask0_2015_763)">
+<line x1="48.3068" y1="63.3838" x2="48.3068" y2="-0.376221" stroke="black" stroke-width="1.15"/>
+<line x1="44.1867" y1="63.3838" x2="44.1867" y2="-0.376221" stroke="black" stroke-width="1.15"/>
+<line x1="40.0666" y1="63.3838" x2="40.0666" y2="-0.376221" stroke="black" stroke-width="1.15"/>
+<line x1="35.9465" y1="63.3838" x2="35.9465" y2="-0.376221" stroke="black" stroke-width="1.15"/>
+<line x1="31.8264" y1="63.3838" x2="31.8264" y2="-0.376221" stroke="black" stroke-width="1.15"/>
+<line x1="27.7063" y1="63.3838" x2="27.7063" y2="-0.376221" stroke="black" stroke-width="1.15"/>
 </g>
 </svg>
