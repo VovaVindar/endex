@@ -13,7 +13,7 @@
   border: none;
   text-align: left;
   cursor: pointer;
-  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 .panel-collapse {
   overflow: hidden;
