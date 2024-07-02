@@ -1,5 +1,5 @@
 .panel {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--token-color-surface-contrast);
   position: relative;
 }
 .panel:last-of-type {
